@@ -51,8 +51,6 @@ export default async function ArtworkPage({
 
             <div className="space-y-3 text-lg text-neutral-600">
 
-              <p>{art.medium}</p>
-
               <p>{art.price}</p>
 
               <p>Status: {art.status}</p>
