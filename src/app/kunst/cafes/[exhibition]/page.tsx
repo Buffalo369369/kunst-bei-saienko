@@ -59,10 +59,6 @@ export default async function ExhibitionPage({
                     {art.title}
                   </h2>
 
-                  <p className="text-sm text-neutral-500">
-                    {art.medium}
-                  </p>
-
                   <p>
                     {art.price}
                   </p>

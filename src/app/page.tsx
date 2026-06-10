@@ -153,11 +153,7 @@ export default function Home() {
         <div className="space-y-2">
 
           <h3 className="text-lg">{art.title}</h3>
-
-          <p className="text-sm text-neutral-500">
-            {art.medium}
-          </p>
-
+          
           <p className="text-sm">
             {art.price}
           </p>
