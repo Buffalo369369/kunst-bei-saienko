@@ -37,7 +37,7 @@ export default function CafesPage() {
               <div className="mt-6">
 
                 <h2 className="text-3xl md:text-4xl">
-                  Café 1
+                  Wunderlich Kaffeeröstrei
                 </h2>
 
                 <p className="text-neutral-500">
@@ -64,7 +64,7 @@ export default function CafesPage() {
               <div className="mt-6">
 
                 <h2 className="text-3xl md:text-4xl">
-                  Café 2
+                  Karabusta Solingen
                 </h2>
 
                 <p className="text-neutral-500">

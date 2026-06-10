@@ -23,7 +23,7 @@ export default function Footer() {
           </h3>
 
           <div className="space-y-2 text-sm">
-            <p>Kunstwerke</p>
+            <p>Kunst</p>
             <p>Shop</p>
             <p>Über mich</p>
             <p>Kontakt</p>
@@ -40,7 +40,6 @@ export default function Footer() {
           <div className="space-y-2 text-sm">
             <p>Impressum</p>
             <p>Datenschutz</p>
-            <p>AGB</p>
           </div>
 
         </div>
