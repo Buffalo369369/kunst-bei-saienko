@@ -75,6 +75,33 @@ export default function CafesPage() {
 
             </Link>
 
+            <Link
+  href="/kunst/cafes/atelier"
+  className="group block"
+>
+  <div className="aspect-[16/9] overflow-hidden bg-neutral-200">
+
+    <img
+      src="/images/project-30.jpg"
+      className="h-full w-full object-cover transition duration-[1500ms] group-hover:scale-105"
+    />
+
+  </div>
+
+  <div className="mt-6">
+
+    <h2 className="text-3xl md:text-4xl">
+      Kunstwerke
+    </h2>
+
+    <p className="text-neutral-500">
+      mit Lieferoption
+    </p>
+
+  </div>
+
+</Link>
+
           </div>
 
         </div>
