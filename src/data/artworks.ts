@@ -122,7 +122,7 @@ export const artworks = [
     exhibition: "atelier",
   },
   {
-    slug: "ein-duft-in-schwarz-weiß",
+    slug: "ein-duft-in-schwarz-weis",
     title: "Ein Duft in Schwarz-Weiß",
     image: "/images/project-1006.jpg",
     price: "€245",
