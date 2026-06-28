@@ -2,6 +2,8 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { artworks } from "@/data/artworks";
+import { exhibitions } from "@/data/exhibitions";
+import ExpandableText from "@/components/ExpandableText";
 
 export default async function ExhibitionPage({
   params,
@@ -10,6 +12,10 @@ export default async function ExhibitionPage({
 }) {
 
   const { exhibition } = await params;
+
+  const exhibitionData = exhibitions.find(
+  (item) => item.slug === exhibition
+);
 
   const exhibitionArtworks = artworks.filter(
     (art) => art.exhibition === exhibition
@@ -23,7 +29,20 @@ export default async function ExhibitionPage({
 
         <div className="mx-auto max-w-[1400px]">
 
-          <h1 className="mb-20 text-5xl md:text-7xl tracking-tight">
+          {exhibitionData && (
+  <section className="mb-20 max-w-4xl">
+    <p className="mb-3 text-sm uppercase tracking-[0.3em] text-neutral-500">
+      Über das Projekt
+    </p>
+
+    <h2 className="mb-8 text-5xl tracking-tight">
+      {exhibitionData.name}
+    </h2>
+
+    <ExpandableText text={exhibitionData.description} />
+  </section>
+)}
+<h1 className="mb-20 text-5xl md:text-7xl tracking-tight">
             Kunstwerke
           </h1>
 

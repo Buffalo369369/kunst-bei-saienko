@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer id="contact" className="border-t border-black/5">
@@ -22,12 +24,33 @@ export default function Footer() {
             Navigation
           </h3>
 
-          <div className="space-y-2 text-sm">
-            <p>Kunst</p>
-            <p>Shop</p>
-            <p>Über mich</p>
-            <p>Kontakt</p>
-          </div>
+          <div className="flex flex-col gap-2 text-sm">
+
+  <Link href="/kunst" className="transition hover:opacity-50">
+
+    Kunst
+
+  </Link>
+
+  <Link href="/shop" className="transition hover:opacity-50">
+
+    Shop
+
+  </Link>
+
+  <Link href="/#about" className="transition hover:opacity-50">
+
+    Über mich
+
+  </Link>
+
+  <Link href="/#contact" className="transition hover:opacity-50">
+
+    Kontakt
+
+  </Link>
+
+</div>
 
         </div>
 
@@ -37,10 +60,33 @@ export default function Footer() {
             Rechtliches
           </h3>
 
-          <div className="space-y-2 text-sm">
-            <p>Impressum</p>
-            <p>Datenschutz</p>
-          </div>
+          <div className="flex flex-col gap-2 text-sm">
+
+  <Link
+
+    href="/impressum"
+
+    className="transition hover:opacity-50"
+
+  >
+
+    Impressum
+
+  </Link>
+
+  <Link
+
+    href="/datenschutz"
+
+    className="transition hover:opacity-50"
+
+  >
+
+    Datenschutz
+
+  </Link>
+
+</div>
 
         </div>
 

@@ -45,16 +45,27 @@ export default async function ArtworkPage({
               </h1>
             </div>
 
-            <div className="space-y-3 text-lg text-neutral-600">
-              <p>{art.price}</p>
+           <div className="space-y-3 text-lg text-neutral-600">
 
-              <p>Status: {art.status}</p>
-            </div>
+  <p>{art.price}</p>
 
-            <div className="max-w-lg text-lg leading-8 text-neutral-600">
-              Dieses Werk ist Teil der Ausstellung und kann direkt über
-              Kunst bei Saienko erworben werden.
-            </div>
+  <p>Status: {art.status}</p>
+
+  <p>Bild inklusive schwarzem Rahmen.</p>
+
+</div>
+
+            <div className="space-y-5">
+
+  <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+    Beschreibung
+  </p>
+
+  <div className="max-w-xl whitespace-pre-line text-lg leading-8 text-neutral-600">
+    {art.description}
+  </div>
+
+</div>
 
             <ArtworkBuyButton art={art} />
 
