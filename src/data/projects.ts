@@ -8,7 +8,7 @@ export const projects = [
   },
 
   {
-    slug: "anastsiia-im-wunderland",
+    slug: "anastasia-im-wunderland",
     name: "?",
     city: "?",
     image: "/images/project-4.jpg",
