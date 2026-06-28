@@ -8,6 +8,14 @@ export const projects = [
   },
 
   {
+    slug: "anastsiia-im-wunderland",
+    name: "?",
+    city: "?",
+    image: "/images/project-4.jpg",
+    available: true,
+  },
+
+  {
     slug: "die-andere-hand-der-liebe",
     name: "Die andere Hand der Liebe",
     city: "Solingen",

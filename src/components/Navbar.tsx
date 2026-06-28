@@ -7,6 +7,10 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const closeMenu = () => {
+  setMenuOpen(false);
+};
+
   return (
     <>
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#f8f8f6]/80 backdrop-blur-xl">
@@ -69,15 +73,35 @@ export default function Navbar() {
 
             <div className="mt-24 flex flex-col gap-8 text-4xl">
 
-              <Link href="/kunst">Kunst</Link>
+  <Link
+    href="/kunst"
+    onClick={closeMenu}
+  >
+    Kunst
+  </Link>
 
-              <Link href="/shop">Shop</Link>
+  <Link
+    href="/shop"
+    onClick={closeMenu}
+  >
+    Shop
+  </Link>
 
-              <Link href="/#about">Über mich</Link>
+  <Link
+    href="/#about"
+    onClick={closeMenu}
+  >
+    Über mich
+  </Link>
 
-              <Link href="/#contact">Kontakt</Link>
+  <Link
+    href="/#contact"
+    onClick={closeMenu}
+  >
+    Kontakt
+  </Link>
 
-            </div>
+</div>
 
           </motion.div>
         )}
