@@ -217,7 +217,7 @@ export default function Home() {
 
           <div className="aspect-square overflow-hidden bg-neutral-200">
             <img
-              src="/images/project-1.jpg"
+              src="/images/project-666.jpg"
               alt="Cafe"
               className="h-full w-full object-cover"
             />
@@ -226,13 +226,13 @@ export default function Home() {
           <div className="flex flex-col justify-center space-y-8 p-12 md:p-20">
 
             <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-              Café Project
+              Projecte
             </p>
 
             <h2 className="text-4xl md:text-5xl leading-tight tracking-tight">
-              Cafés
+              Bilder, Bücher und vieles mehr..
               <br />
-              Solingen
+          
             </h2>
 
             <p className="max-w-lg text-lg leading-8 text-neutral-600">
@@ -242,10 +242,10 @@ export default function Home() {
             </p>
 
             <Link
-  href="/kunst/cafes"
+  href="/kunst"
   className="w-fit bg-black px-8 py-4 text-sm uppercase tracking-[0.2em] text-white transition hover:bg-neutral-800"
 >
-  Projekt ansehen
+  Projekte ansehen
 </Link>
 
           </div>
