@@ -9,8 +9,8 @@ export const projects = [
 
   {
     slug: "anastasia-im-wunderland",
-    name: "?",
-    city: "?",
+    name: "Anastasia im Wunderland",
+    city: "Solingen",
     image: "/images/project-4.jpg",
     available: true,
   },
