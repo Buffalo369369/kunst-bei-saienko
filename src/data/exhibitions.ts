@@ -1,7 +1,7 @@
 export const exhibitions = [
   {
     slug: "freiraum",
-    name: "Wunderlich Kaffeerösterei",
+    name: "Wunderlich Rösterei",
     city: "Solingen",
     image: "/images/project-10.jpg",
 

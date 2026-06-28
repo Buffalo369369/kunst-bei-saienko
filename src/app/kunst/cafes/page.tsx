@@ -37,7 +37,7 @@ export default function CafesPage() {
               <div className="mt-6">
 
                 <h2 className="text-3xl md:text-4xl">
-                  Wunderlich Kaffeeröstrei
+                  Wunderlich Rösterei
                 </h2>
 
                 <p className="text-neutral-500">
