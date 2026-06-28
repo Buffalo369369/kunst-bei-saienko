@@ -16,6 +16,14 @@ export const projects = [
   },
 
   {
+    slug: "farben-der-welt",
+    name: "Farben der Welt",
+    city: "Solingen",
+    image: "/images/project-3.jpg",
+    available: false,
+  },
+
+  {
     slug: "die-andere-hand-der-liebe",
     name: "Die andere Hand der Liebe",
     city: "Solingen",
@@ -23,11 +31,4 @@ export const projects = [
     available: false,
   },
 
-  {
-    slug: "farben-der-welt",
-    name: "Farben der Welt",
-    city: "Solingen",
-    image: "/images/project-3.jpg",
-    available: false,
-  },
 ];

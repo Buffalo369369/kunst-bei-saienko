@@ -226,7 +226,7 @@ export default function Home() {
           <div className="flex flex-col justify-center space-y-8 p-12 md:p-20">
 
             <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-              Projecte
+              Projekte
             </p>
 
             <h2 className="text-4xl md:text-5xl leading-tight tracking-tight">
