@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ArtworkBuyButton from "@/components/ArtworkBuyButton";
-import { artworks } from "@/data/artworks";
+import { supabase } from "@/lib/supabase";
 
 export default async function ArtworkPage({
   params,
@@ -10,11 +10,15 @@ export default async function ArtworkPage({
 }) {
   const { slug } = await params;
 
-  const art = artworks.find((art) => art.slug === slug);
+  const { data: art, error } = await supabase
+  .from("artworks")
+  .select("*")
+  .eq("slug", slug)
+  .single();
 
-  if (!art) {
-    return <div>Artwork not found</div>;
-  }
+if (error || !art) {
+  return <div>Artwork not found</div>;
+}
 
   return (
     <>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { artworks } from "@/data/artworks";
+import { supabase } from "@/lib/supabase";
 import { exhibitions } from "@/data/exhibitions";
 import ExpandableText from "@/components/ExpandableText";
 
@@ -17,9 +17,14 @@ export default async function ExhibitionPage({
   (item) => item.slug === exhibition
 );
 
-  const exhibitionArtworks = artworks.filter(
-    (art) => art.exhibition === exhibition
-  );
+  const { data: exhibitionArtworks, error } = await supabase
+  .from("artworks")
+  .select("*")
+  .eq("exhibition", exhibition);
+
+if (error) {
+  console.error(error);
+}
 
   return (
     <>
@@ -48,7 +53,7 @@ export default async function ExhibitionPage({
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
 
-            {exhibitionArtworks.map((art) => (
+            {(exhibitionArtworks ?? []).map((art) => (
 
               <Link
                 key={art.slug}
