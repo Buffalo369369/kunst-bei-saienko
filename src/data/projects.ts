@@ -1,7 +1,7 @@
 export const projects = [
   {
     slug: "cafes",
-    name: "Cafés",
+    name: "Gold im Kaffeesatz",
     city: "Solingen",
     image: "/images/project-1.jpg",
     available: true,
