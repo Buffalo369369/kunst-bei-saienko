@@ -26,7 +26,7 @@ export const projects = [
   {
     slug: "die-andere-hand-der-liebe",
     name: "Die andere Hand der Liebe",
-    city: "Solingen",
+    city: "Essen",
     image: "/images/project-2.jpg",
     available: false,
   },
