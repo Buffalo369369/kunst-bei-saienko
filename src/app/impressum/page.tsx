@@ -43,7 +43,7 @@ export default function ImpressumPage() {
               <p>
                 Telefon: +49 163 4016519
                 <br />
-                E-Mail: info@kunst-bei-saienko.de
+                E-Mail: kunst.bei.saienko@gmail.com
               </p>
             </section>
 

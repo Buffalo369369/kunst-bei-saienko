@@ -38,7 +38,7 @@ export default function DatenschutzPage() {
                 <p>42651 Solingen</p>
                 <p>Deutschland</p>
                 <br />
-                <p>E-Mail: info@kunst-bei-saienko.de</p>
+                <p>E-Mail: kunst.bei.saienko@gmail.com</p>
                 <p>Telefon: +49 163 4016519</p>
               </div>
             </section>
@@ -251,7 +251,7 @@ export default function DatenschutzPage() {
                 <p>42651 Solingen</p>
                 <p>Deutschland</p>
                 <br />
-                <p>E-Mail: info@kunst-bei-saienko.de</p>
+                <p>E-Mail: kunst.bei.saienko@gmail.com</p>
                 <p>Telefon: +49 163 4016519</p>
               </div>
             </section>

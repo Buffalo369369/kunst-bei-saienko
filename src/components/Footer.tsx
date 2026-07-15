@@ -97,7 +97,7 @@ export default function Footer() {
           </h3>
 
           <div className="space-y-2 text-sm">
-            <p>info@kunst-bei-saienko.de</p>
+            <p>kunst.bei.saienko@gmail.com</p>
             <p>+49 163 4016519</p>
             <p>Solingen, Deutschland</p>
           </div>
