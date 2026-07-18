@@ -131,12 +131,11 @@ export default function Home() {
           </p>
 
           <h2 className="text-4xl md:text-5xl leading-tight tracking-tight">
-            Kunst als Erinnerung,
-            Emotion und Ruhe.
+            Kunst BEI Saienko – Warum „bei“ und nicht „von“?
           </h2>
 
           <p className="max-w-xl text-lg leading-8 text-neutral-600">
-            Meine Kunst sollte nicht zwischen vier Wänden eingesperrt sein. Die Idee für dieses Projekt entstand aus dem Wunsch, Gemälde in den Rhythmus des städtischen Lebens zu integrieren – dorthin, wo Menschen Kaffee trinken, sich austauschen und das Leben genießen. Jedes Café, in dem meine Arbeiten ausgestellt sind, erzählt eine eigene Geschichte und präsentiert eine exklusive Serie. Sie können meiner Kunst zufällig beim Frühstück begegnen und sie in diesem Moment zu einem Teil Ihres Zuhauses machen.
+            Weil Kunst für mich wie eine Einladung nach Hause ist. Ich möchte Sie nicht nur als Betrachter, sondern als Gast in meinem kreativen Universum begrüßen. Treten Sie ein, nehmen Sie Platz und genießen Sie den Moment.
           </p>
 
           <button className="w-fit border border-black px-8 py-4 text-sm uppercase tracking-[0.2em] transition hover:bg-black hover:text-white">
@@ -173,9 +172,7 @@ export default function Home() {
             </h2>
 
             <p className="max-w-lg text-lg leading-8 text-neutral-600">
-              Entdecke Originalwerke direkt im Café.
-              Scanne den QR-Code neben den Kunstwerken
-              und erfahre mehr über jedes Unikat.
+              Meine Kreativität lässt sich nicht in eine einzige Schublade stecken. Ob ausdrucksstarke Malerei, Buchprojekte oder Kunst im Raum – hier teile ich meine neuesten Arbeiten und Herzensprojekte mit Ihnen. Werfen Sie einen Blick hinter die Kulissen!
             </p>
 
             <Link

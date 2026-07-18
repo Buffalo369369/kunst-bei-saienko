@@ -58,7 +58,7 @@ export default function ImpressumPage() {
               </p>
 
               <p className="mt-4">
-                Steuernummer: 128/5526/5198
+                
               </p>
             </section>
 
