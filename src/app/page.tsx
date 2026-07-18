@@ -15,16 +15,17 @@ export default function Home() {
       {/* HERO */}
       <section className="mx-auto max-w-7xl px-6 py-10 sm:py-14 md:px-8 lg:px-10 lg:py-20">
         <div
-          className="
-            grid
-            items-center
-            gap-12
-            lg:grid-cols-2
-            lg:gap-24
-            min-h-[70vh]
-            lg:min-h-[85vh]
-          "
-        >
+  className="
+    grid
+    items-center
+    gap-14
+    lg:grid-cols-[1.05fr_0.95fr]
+    lg:gap-28
+    xl:gap-36
+    min-h-[70vh]
+    lg:min-h-[82vh]
+  "
+>
           {/* LEFT */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -32,18 +33,22 @@ export default function Home() {
             transition={{ duration: 1 }}
             className="space-y-10"
           >
-            <div className="space-y-6">
+            <div className="space-y-5">
               <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
                 Original Art & Unique Pieces
               </p>
 
               <h1
                 className="
-                  max-w-xl
-                  text-[clamp(3rem,8vw,6.5rem)]
-                  leading-[0.92]
-                  tracking-[-0.04em]
-                "
+max-w-[680px]
+text-5xl
+sm:text-6xl
+lg:text-[5rem]
+xl:text-[5.2rem]
+2xl:text-[5.5rem]
+leading-[0.96]
+tracking-[-0.05em]
+"
               >
                 Einzigartige
                 <br />
@@ -55,13 +60,13 @@ export default function Home() {
               </h1>
 
               <p
-                className="
-                  max-w-md
-                  text-[clamp(1rem,2vw,1.15rem)]
-                  leading-8
-                  text-neutral-500
-                "
-              >
+  className="
+    max-w-lg
+    text-[1.1rem]
+    leading-8
+    text-neutral-500
+  "
+>
                 Originale Kunstwerke und handbemalter Merch — jedes Stück ein
                 Unikat von Anastasiia Saienko.
               </p>
@@ -91,7 +96,7 @@ export default function Home() {
             transition={{ duration: 1.2 }}
             className="relative"
           >
-            <div className="group aspect-[4/5] overflow-hidden bg-neutral-200 lg:aspect-square">
+            <div className="group aspect-[4/5] overflow-hidden bg-neutral-200">
               <img
                 src="/images/art-1.jpg"
                 alt="Artwork"
