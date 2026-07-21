@@ -152,9 +152,12 @@ tracking-[-0.05em]
             Sie den Moment.
           </p>
 
-          <button className="w-fit border border-black px-6 sm:px-8 py-4 text-sm uppercase tracking-[0.2em] transition hover:bg-black hover:text-white">
-            Mehr erfahren
-          </button>
+          <Link
+  href="/kuenstlerin"
+  className="w-fit border border-black px-6 py-4 text-sm uppercase tracking-[0.2em] transition hover:bg-black hover:text-white sm:px-8"
+>
+  Mehr erfahren
+</Link>
         </div>
       </section>
 
