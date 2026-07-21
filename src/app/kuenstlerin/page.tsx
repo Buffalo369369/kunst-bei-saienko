@@ -95,8 +95,7 @@ export default function KuenstlerinPage() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
-              Hier kannst du später dein YouTube-Video einfügen und Besucher in
-              deine kreative Welt mitnehmen.
+              
             </p>
           </div>
 
