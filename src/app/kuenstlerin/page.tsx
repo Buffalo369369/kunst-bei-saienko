@@ -53,22 +53,15 @@ export default function KuenstlerinPage() {
 
               <div className="space-y-6 text-lg leading-8 text-neutral-600">
                 <p>
-                  Hier kannst du später deine persönliche Geschichte erzählen.
-                  Wie du zur Kunst gekommen bist, was dich geprägt hat und
-                  warum Kreativität ein wichtiger Teil deines Lebens geworden
-                  ist.
+                  .
                 </p>
 
                 <p>
-                  Besucher interessieren sich nicht nur für ein Kunstwerk,
-                  sondern auch für die Person dahinter. Genau deshalb darf diese
-                  Seite persönlicher sein als alle anderen Bereiche deiner
-                  Website.
+                  .
                 </p>
 
                 <p>
-                  Du kannst hier beliebig viel Text ergänzen. Das Layout wächst
-                  automatisch mit.
+                  .
                 </p>
               </div>
             </div>
