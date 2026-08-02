@@ -25,56 +25,19 @@ export default function KuenstlerinPage() {
               </p>
 
               <h1 className="text-5xl leading-[0.92] tracking-tight sm:text-6xl xl:text-7xl">
-                Anastasiia
+                Willkommen
                 <br />
-                Saienko
+                in meiner Welt
               </h1>
 
               <p className="max-w-xl text-lg leading-8 text-neutral-600">
-                Kunst bedeutet für mich nicht nur Farben auf einer Leinwand.
-                Sie ist eine Sprache, mit der Gefühle sichtbar werden und
-                Geschichten erzählt werden können.
+                Kunst ist für mich mehr als nur Farbe auf Leinwand – sie ist meine Sprache, mein Zuhause und meine Art, die Welt zu verstehen. Jedes Bild erzählt eine Geschichte von Emotionen, Momenten und Begegnungen.
               </p>
             </div>
           </div>
         </section>
 
-        {/* STORY */}
-        <section className="mx-auto max-w-7xl px-6 py-20 md:px-8 lg:px-10">
-          <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
-            <div>
-              <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
-                Meine Geschichte
-              </p>
-
-              <h2 className="mb-8 text-4xl leading-tight tracking-tight md:text-5xl">
-                Wie alles begann
-              </h2>
-
-              <div className="space-y-6 text-lg leading-8 text-neutral-600">
-                <p>
-                  .
-                </p>
-
-                <p>
-                  .
-                </p>
-
-                <p>
-                  .
-                </p>
-              </div>
-            </div>
-
-            <div className="overflow-hidden bg-neutral-200">
-              <img
-                src="/images/project-666.jpg"
-                alt="Studio"
-                className="aspect-[4/5] h-full w-full object-cover"
-              />
-            </div>
-          </div>
-        </section>
+        
 
         {/* VIDEO */}
         <section className="mx-auto max-w-5xl px-6 py-10 md:px-8">
@@ -88,7 +51,7 @@ export default function KuenstlerinPage() {
             </h2>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-neutral-600">
-              
+              In einem besonderen künstlerischen Video-Porträt, das gemeinsam mit der Journalistin Natalka Klykova-Volianiuk entstanden ist, teile ich meine ganz persönliche Perspektive auf meinen kreativen Weg und das, was mich inspiriert.
             </p>
           </div>
 
@@ -139,20 +102,7 @@ export default function KuenstlerinPage() {
           </div>
         </section>
 
-        {/* QUOTE */}
-        <section className="mx-auto max-w-5xl px-6 py-24 text-center">
-  <div className="border-y border-black/10 py-20">
-    <p className="text-[clamp(2rem,5vw,3.5rem)] leading-tight tracking-tight">
-      „Jedes Kunstwerk beginnt
-      <br />
-      mit einem Gefühl.“
-    </p>
-
-    <p className="mt-8 uppercase tracking-[0.3em] text-sm text-neutral-500">
-      — Anastasiia Saienko
-    </p>
-  </div>
-</section>
+        
 
         {/* LARGE IMAGE */}
         <section className="mx-auto max-w-7xl px-6 py-24 md:px-8 lg:px-10">
