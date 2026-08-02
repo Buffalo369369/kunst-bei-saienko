@@ -37,9 +37,7 @@ export default function KuenstlerinPage() {
           </div>
         </section>
 
-        
-
-        {/* VIDEO */}
+      {/* VIDEO */}
         <section className="mx-auto max-w-5xl px-6 py-10 md:px-8">
           <div className="mb-10 text-center">
             <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
@@ -102,9 +100,7 @@ export default function KuenstlerinPage() {
           </div>
         </section>
 
-        
-
-        {/* LARGE IMAGE */}
+       {/* LARGE IMAGE */}
         <section className="mx-auto max-w-7xl px-6 py-24 md:px-8 lg:px-10">
           <div className="overflow-hidden bg-neutral-200">
             <img
