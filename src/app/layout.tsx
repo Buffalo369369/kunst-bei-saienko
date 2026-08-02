@@ -22,6 +22,7 @@ export default function RootLayout({
     <html lang="de">
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
