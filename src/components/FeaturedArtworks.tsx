@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 
@@ -68,9 +69,11 @@ export default function FeaturedArtworks() {
                   {art.status}
                 </div>
 
-                <img
+                <Image
                   src={art.image}
                   alt={art.title}
+                  fill
+                  sizes="(max-width: 639px) 100vw, (max-width: 1279px) 50vw, 25vw"
                   className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                 />
               </div>

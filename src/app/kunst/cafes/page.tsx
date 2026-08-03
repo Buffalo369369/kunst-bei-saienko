@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -25,10 +26,13 @@ export default function CafesPage() {
               href="/kunst/cafes/freiraum"
               className="group block"
             >
-              <div className="aspect-[16/9] overflow-hidden bg-neutral-200">
+              <div className="relative aspect-[16/9] overflow-hidden bg-neutral-200">
 
-                <img
+                <Image
                   src="/images/project-10.jpg"
+                  alt="Wunderlich Rösterei in Solingen"
+                  fill
+                  sizes="100vw"
                   className="h-full w-full object-cover transition duration-[1500ms] group-hover:scale-105"
                 />
 
@@ -52,10 +56,13 @@ export default function CafesPage() {
               href="/kunst/cafes/morgenlicht"
               className="group block"
             >
-              <div className="aspect-[16/9] overflow-hidden bg-neutral-200">
+              <div className="relative aspect-[16/9] overflow-hidden bg-neutral-200">
 
-                <img
+                <Image
                   src="/images/project-20.jpg"
+                  alt="Karabusta Solingen"
+                  fill
+                  sizes="100vw"
                   className="h-full w-full object-cover transition duration-[1500ms] group-hover:scale-105"
                 />
 
@@ -79,10 +86,13 @@ export default function CafesPage() {
   href="/kunst/cafes/atelier"
   className="group block"
 >
-  <div className="aspect-[16/9] overflow-hidden bg-neutral-200">
+  <div className="relative aspect-[16/9] overflow-hidden bg-neutral-200">
 
-    <img
+    <Image
       src="/images/project-30.jpg"
+      alt="Kunstwerke mit Lieferoption"
+      fill
+      sizes="100vw"
       className="h-full w-full object-cover transition duration-[1500ms] group-hover:scale-105"
     />
 

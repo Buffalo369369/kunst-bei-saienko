@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { projects } from "@/data/projects";
@@ -27,10 +28,12 @@ export default function KunstPage() {
                   className="group block"
                 >
                   <div className="overflow-hidden rounded-sm bg-neutral-200">
-                    <div className="aspect-[16/9]">
-                      <img
+                    <div className="relative aspect-[16/9]">
+                      <Image
                         src={project.image}
                         alt={project.name}
+                        fill
+                        sizes="100vw"
                         className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                       />
                     </div>
@@ -49,10 +52,12 @@ export default function KunstPage() {
               ) : (
                 <div key={project.slug}>
                   <div className="relative overflow-hidden rounded-sm bg-neutral-200">
-                    <div className="aspect-[16/9]">
-                      <img
+                    <div className="relative aspect-[16/9]">
+                      <Image
                         src={project.image}
                         alt={project.name}
+                        fill
+                        sizes="100vw"
                         className="h-full w-full object-cover blur-[3px] opacity-50"
                       />
                     </div>

@@ -2,6 +2,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ArtworkBuyButton from "@/components/ArtworkBuyButton";
 import { supabase } from "@/lib/supabase";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export default async function ArtworkPage({
   params,
@@ -17,7 +19,7 @@ export default async function ArtworkPage({
     .single();
 
   if (error || !art) {
-    return <div>Artwork not found</div>;
+    notFound();
   }
 
   return (
@@ -28,10 +30,12 @@ export default async function ArtworkPage({
         <section className="mx-auto max-w-7xl px-6 py-16 md:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:px-10 lg:py-24">
           {/* IMAGE */}
           <div className="overflow-hidden bg-neutral-200">
-            <div className="aspect-[4/5]">
-              <img
+            <div className="relative aspect-[4/5]">
+              <Image
                 src={art.image}
                 alt={art.title}
+                fill
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="h-full w-full object-cover"
               />
             </div>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -13,10 +14,12 @@ export default function KuenstlerinPage() {
         <section className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16 lg:px-10 lg:py-20">
           <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
-            <div className="overflow-hidden bg-neutral-200">
-              <img
+            <div className="relative overflow-hidden bg-neutral-200">
+              <Image
                 src="/images/artist.jpg"
                 alt="Anastasiia Saienko"
+                fill
+                sizes="(max-width: 1023px) 100vw, 45vw"
                 className="aspect-[4/5] h-full w-full object-cover"
               />
             </div>
@@ -91,7 +94,7 @@ export default function KuenstlerinPage() {
             </p>
 
             <h2 className="mb-6 text-[clamp(2.3rem,5vw,3.5rem)] leading-tight tracking-tight">
-              Warum „BEI" und nicht „VON"?
+              Warum „BEI&quot; und nicht „VON&quot;?
             </h2>
 
             <div className="space-y-5 text-[clamp(1rem,2vw,1.15rem)] leading-8 text-neutral-600">
@@ -111,8 +114,8 @@ export default function KuenstlerinPage() {
 
               <p>
                 Deshalb heißt es nicht{" "}
-                <strong>„Kunst von Saienko"</strong>, sondern{" "}
-                <strong>„Kunst bei Saienko"</strong>. Denn hier darf jeder
+                <strong>„Kunst von Saienko&quot;</strong>, sondern{" "}
+                <strong>„Kunst bei Saienko&quot;</strong>. Denn hier darf jeder
                 eintreten, verweilen und seinen eigenen Moment mit der Kunst
                 erleben.
               </p>
@@ -126,10 +129,12 @@ export default function KuenstlerinPage() {
         {/* IMAGE */}
         <section className="mx-auto max-w-7xl px-6 py-14 md:px-8 md:py-16 lg:px-10">
 
-          <div className="overflow-hidden bg-neutral-200">
-            <img
+          <div className="relative overflow-hidden bg-neutral-200">
+            <Image
               src="/images/art-1.jpg"
-              alt="Artwork"
+              alt="Kunstwerk von Anastasiia Saienko"
+              fill
+              sizes="100vw"
               className="aspect-[16/9] h-full w-full object-cover"
             />
           </div>

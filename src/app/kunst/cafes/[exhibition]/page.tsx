@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { supabase } from "@/lib/supabase";
 import { exhibitions } from "@/data/exhibitions";
 import ExpandableText from "@/components/ExpandableText";
+import { notFound } from "next/navigation";
 
 export default async function ExhibitionPage({
   params,
@@ -16,6 +18,10 @@ export default async function ExhibitionPage({
   const exhibitionData = exhibitions.find(
   (item) => item.slug === exhibition
 );
+
+  if (!exhibitionData) {
+    notFound();
+  }
 
   const { data: exhibitionArtworks, error } = await supabase
   .from("artworks")
@@ -69,9 +75,11 @@ if (error) {
 
                   </div>
 
-                  <img
+                  <Image
                     src={art.image}
                     alt={art.title}
+                    fill
+                    sizes="(max-width: 767px) 50vw, 25vw"
                     className="h-full w-full object-cover transition duration-1000 group-hover:scale-105"
                   />
 

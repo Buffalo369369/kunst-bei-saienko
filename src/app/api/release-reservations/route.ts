@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { supabaseUrl } from "@/lib/env";
+import { supabaseServiceRoleKey } from "@/lib/server/env";
 
 const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
+  supabaseUrl,
+  supabaseServiceRoleKey
 );
 
 export async function GET() {

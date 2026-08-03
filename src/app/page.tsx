@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 import Navbar from "@/components/Navbar";
@@ -96,10 +97,12 @@ tracking-[-0.05em]
             transition={{ duration: 1.2 }}
             className="relative"
           >
-            <div className="group aspect-[4/5] overflow-hidden bg-neutral-200">
-              <img
+            <div className="group relative aspect-[4/5] overflow-hidden bg-neutral-200">
+              <Image
                 src="/images/art-1.jpg"
-                alt="Artwork"
+                alt="Kunstwerk von Anastasiia Saienko"
+                fill
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="h-full w-full object-cover transition duration-[2000ms] group-hover:scale-105"
               />
             </div>
@@ -115,10 +118,12 @@ tracking-[-0.05em]
         id="about"
         className="mx-auto grid max-w-7xl gap-16 px-6 py-24 md:px-8 lg:grid-cols-2 lg:gap-24 lg:px-10 lg:py-32"
       >
-        <div className="aspect-[4/5] overflow-hidden bg-neutral-200">
-          <img
+        <div className="relative aspect-[4/5] overflow-hidden bg-neutral-200">
+          <Image
             src="/images/artist.jpg"
-            alt="Artist"
+            alt="Anastasiia Saienko"
+            fill
+            sizes="(max-width: 1023px) 100vw, 50vw"
             className="h-full w-full object-cover"
           />
         </div>
@@ -164,10 +169,12 @@ tracking-[-0.05em]
       {/* PROJECTS */}
       <section className="mx-auto max-w-7xl px-6 pb-24 md:px-8 lg:px-10 lg:pb-32">
         <div className="grid overflow-hidden border border-black/5 lg:grid-cols-2">
-          <div className="aspect-square overflow-hidden bg-neutral-200">
-            <img
+          <div className="relative aspect-square overflow-hidden bg-neutral-200">
+            <Image
               src="/images/project-666.jpg"
-              alt="Cafe"
+              alt="Kunstprojekt in einem Café"
+              fill
+              sizes="(max-width: 1023px) 100vw, 50vw"
               className="h-full w-full object-cover"
             />
           </div>

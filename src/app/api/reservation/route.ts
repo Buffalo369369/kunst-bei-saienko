@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import { supabaseUrl } from "@/lib/env";
+import {
+  supabaseServiceRoleKey,
+  telegramChatId,
+  telegramToken,
+} from "@/lib/server/env";
 
 const supabase = createClient(
 
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  supabaseUrl,
 
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
+  supabaseServiceRoleKey
 
 );
 
@@ -39,14 +45,14 @@ ${body.message}
 `;
 
   const response = await fetch(
-  `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`,
+  `https://api.telegram.org/bot${telegramToken}/sendMessage`,
   {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      chat_id: process.env.TELEGRAM_CHAT_ID,
+      chat_id: telegramChatId,
       text: message,
     }),
   }
