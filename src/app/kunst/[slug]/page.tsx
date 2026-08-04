@@ -29,7 +29,7 @@ export default async function ArtworkPage({
       <main className="min-h-screen bg-[#f8f8f6]">
         <section className="mx-auto max-w-7xl px-6 py-16 md:px-8 lg:grid lg:grid-cols-2 lg:gap-24 lg:px-10 lg:py-24">
           {/* IMAGE */}
-          <div className="overflow-hidden bg-neutral-200">
+          <div className="overflow-hidden bg-neutral-200 lg:self-start">
             <div className="relative aspect-[4/5]">
               <Image
                 src={art.image}
