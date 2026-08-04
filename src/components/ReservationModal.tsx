@@ -25,12 +25,14 @@ export default function ReservationModal({ art, onClose }: Props) {
 
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState("");
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -85,6 +87,7 @@ export default function ReservationModal({ art, onClose }: Props) {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setLoading(true);
+    setErrorMessage(null);
 
     try {
       const res = await fetch("/api/reservation", {
@@ -94,28 +97,38 @@ export default function ReservationModal({ art, onClose }: Props) {
         },
         body: JSON.stringify({
           slug: art.slug,
-          artwork: art.title,
-          price: art.price,
           firstName,
           lastName,
           email,
           phone,
           message,
+          website,
         }),
       });
 
-      if (!res.ok) {
-        throw new Error("Reservation failed");
+      if (res.status === 201) {
+        setSuccess(true);
+
+        setTimeout(() => {
+          onClose();
+        }, 1800);
+
+        return;
       }
 
-      setSuccess(true);
+      const errors = {
+        400: "Bitte überprüfen Sie Ihre Eingaben und versuchen Sie es erneut.",
+        404: "Dieses Kunstwerk ist leider nicht mehr verfügbar.",
+        409: "Dieses Kunstwerk ist leider nicht mehr verfügbar oder bereits reserviert.",
+      } as const;
 
-      setTimeout(() => {
-        onClose();
-      }, 1800);
+      setErrorMessage(
+        errors[res.status as keyof typeof errors] ??
+          "Beim Senden ist ein Fehler aufgetreten."
+      );
     } catch (err) {
-      alert("Beim Senden ist ein Fehler aufgetreten.");
       console.error(err);
+      setErrorMessage("Beim Senden ist ein Fehler aufgetreten.");
     } finally {
       setLoading(false);
     }
@@ -189,6 +202,16 @@ export default function ReservationModal({ art, onClose }: Props) {
             </h2>
 
             <form className="space-y-5" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="website"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
               <label htmlFor="reservation-first-name" className="sr-only">
                 Vorname
               </label>
@@ -253,6 +276,12 @@ export default function ReservationModal({ art, onClose }: Props) {
                 onChange={(e) => setMessage(e.target.value)}
                 className="w-full border border-black/10 bg-transparent px-5 py-4 outline-none"
               />
+
+              {errorMessage && (
+                <p aria-live="polite" className="leading-8 text-neutral-600">
+                  {errorMessage}
+                </p>
+              )}
 
               <button
                 type="submit"

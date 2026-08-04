@@ -21,8 +21,14 @@ export default function ArtworkBuyButton({
   art: Artwork;
 }) {
   const [showModal, setShowModal] = useState(false);
+  const [currentTime] = useState(() => Date.now());
 
-  const isReserved = art.status === "Reserviert";
+  const reservedUntil = art.reserved_until
+    ? Date.parse(art.reserved_until)
+    : Number.NaN;
+  const isReserved =
+    art.status === "Reserviert" &&
+    (Number.isNaN(reservedUntil) || reservedUntil > currentTime);
 
   return (
     <>

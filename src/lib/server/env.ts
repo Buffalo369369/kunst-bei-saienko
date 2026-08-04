@@ -1,7 +1,11 @@
 import "server-only";
 
 function getRequiredServerEnv(
-  name: "SUPABASE_SERVICE_ROLE_KEY" | "TELEGRAM_TOKEN" | "TELEGRAM_CHAT_ID"
+  name:
+    | "SUPABASE_SERVICE_ROLE_KEY"
+    | "TELEGRAM_TOKEN"
+    | "TELEGRAM_CHAT_ID"
+    | "CRON_SECRET"
 ) {
   const value = process.env[name];
 
@@ -17,3 +21,7 @@ export const supabaseServiceRoleKey = getRequiredServerEnv(
 );
 export const telegramToken = getRequiredServerEnv("TELEGRAM_TOKEN");
 export const telegramChatId = getRequiredServerEnv("TELEGRAM_CHAT_ID");
+
+export function getCronSecret() {
+  return getRequiredServerEnv("CRON_SECRET");
+}
