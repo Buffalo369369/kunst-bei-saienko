@@ -5,7 +5,7 @@ import BookPreorderForm from "@/components/BookPreorderForm";
 import Navbar from "@/components/Navbar";
 import WonderlandQuotes from "@/components/WonderlandQuotes";
 
-const bookCoverSrc = "/images/project-4.jpg";
+const bookCoverSrc = "/images/project-5.jpg";
 
 export default function AnastasiaImWunderlandPage() {
   return (
@@ -59,30 +59,41 @@ export default function AnastasiaImWunderlandPage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-4xl px-6 py-14 md:px-8 md:py-24">
-          <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
-            Die Geschichte
-          </p>
-
-          <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] leading-tight tracking-tight">
-            Über das Buch
-          </h2>
-
-          <div className="mt-8 max-w-3xl space-y-5 text-[clamp(1rem,2vw,1.15rem)] leading-8 text-neutral-600">
-            <p>
-              „Anastasia im Wunderland“ erzählt von einem Neuanfang und dem
-              Versuch, in einer fremden Welt einen eigenen Platz zu finden.
-              Es ist eine Geschichte über Identität, Migration und die kleinen
-              Entscheidungen, die uns langsam verwandeln.
+        <section className="mx-auto max-w-7xl px-6 py-14 md:px-8 md:py-24 lg:grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start lg:gap-20 lg:px-10">
+          <div>
+            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-neutral-500">
+              Die Geschichte
             </p>
 
-            <p>
-              Kunst wird dabei zu einer Sprache, die verbindet: mit
-              Erinnerungen, mit neuen Begegnungen und mit dem Mut, die eigene
-              Kreativität ernst zu nehmen. Ein persönliches Buch über das
-              Weitergehen, ohne sich selbst zu verlieren.
-            </p>
+            <h2 className="text-[clamp(2.5rem,6vw,4.5rem)] leading-tight tracking-tight">
+              Über das Buch
+            </h2>
+
+            <div className="mt-8 max-w-3xl space-y-5 text-[clamp(1rem,2vw,1.15rem)] leading-8 text-neutral-600">
+              <p>
+                „Anastasia im Wunderland“ erzählt von einem Neuanfang und dem
+                Versuch, in einer fremden Welt einen eigenen Platz zu finden.
+                Es ist eine Geschichte über Identität, Migration und die kleinen
+                Entscheidungen, die uns langsam verwandeln.
+              </p>
+
+              <p>
+                Kunst wird dabei zu einer Sprache, die verbindet: mit
+                Erinnerungen, mit neuen Begegnungen und mit dem Mut, die eigene
+                Kreativität ernst zu nehmen. Ein persönliches Buch über das
+                Weitergehen, ohne sich selbst zu verlieren.
+              </p>
+            </div>
           </div>
+
+          <Image
+            src="/images/anastasia-book-in-hands.jpg"
+            alt="Anastasia hält ein Exemplar von „Anastasia im Wunderland“ in den Händen"
+            width={2642}
+            height={3522}
+            sizes="(max-width: 767px) calc(100vw - 3rem), 32rem"
+            className="mt-12 h-auto w-full md:mt-16 md:max-w-lg lg:mt-0 lg:justify-self-end"
+          />
         </section>
 
         <WonderlandQuotes />
