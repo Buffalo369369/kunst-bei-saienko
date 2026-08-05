@@ -355,20 +355,42 @@ export default function BookPreorderForm() {
         <p>Versand: {shippingCost}</p>
       </div>
 
+      <section className="border-t border-white/20 pt-6">
+        <h3 className="text-sm uppercase tracking-[0.2em] text-white/70">
+          Wie geht es danach weiter?
+        </h3>
+        <ol className="mt-4 grid gap-x-6 gap-y-2 text-sm leading-6 text-white/75 sm:grid-cols-2">
+          <li>
+            1. Deine Vorbestellungsanfrage geht direkt bei Anastasiia ein.
+          </li>
+          <li>2. Anastasiia meldet sich persönlich bei dir.</li>
+          <li>
+            3. Verfügbarkeit, Preis und Zahlung werden gemeinsam bestätigt.
+          </li>
+          <li>4. Anschließend wird Abholung oder Versand abgestimmt.</li>
+        </ol>
+      </section>
+
+      <p className="text-sm leading-7 text-white/75">
+        Mit dem Absenden der Anfrage kommt noch kein Kaufvertrag zustande. Wir
+        melden uns persönlich bei dir, um Verfügbarkeit, Preis, Zahlung und
+        Abholung bzw. Versand zu bestätigen.
+      </p>
+
       <button
         type="submit"
         disabled={isSubmitting}
         className="w-full bg-white px-6 py-4 text-sm uppercase tracking-[0.2em] text-black transition hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:cursor-not-allowed disabled:bg-neutral-300"
       >
         {isSubmitting
-          ? "Vorbestellung wird gesendet..."
-          : "Vorbestellung verbindlich absenden"}
+          ? "Anfrage wird gesendet..."
+          : "Vorbestellung anfragen"}
       </button>
 
       {submissionStatus === "success" && (
         <p aria-live="polite" className="text-center text-sm leading-6 text-white/65">
-          Vielen Dank für deine Vorbestellung! Du erhältst in Kürze die weiteren
-          Informationen zur Zahlung.
+          Vielen Dank für deine Vorbestellungsanfrage! Anastasiia meldet sich in
+          Kürze persönlich bei dir per E-Mail.
         </p>
       )}
 

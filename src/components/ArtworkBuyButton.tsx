@@ -41,7 +41,7 @@ export default function ArtworkBuyButton({
             : "bg-black hover:bg-neutral-800"
         }`}
       >
-        {isReserved ? "Reserviert" : "Kaufen"}
+        {isReserved ? "Reserviert" : "Reservieren"}
       </button>
 
       {showModal && (

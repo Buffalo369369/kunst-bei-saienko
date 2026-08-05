@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import YouTubeConsent from "@/components/YouTubeConsent";
 
 export default function KuenstlerinPage() {
   return (
@@ -70,17 +71,7 @@ export default function KuenstlerinPage() {
 
           </div>
 
-          <div className="overflow-hidden shadow-xl">
-            <div className="aspect-video">
-              <iframe
-                className="h-full w-full"
-                src="https://www.youtube.com/embed/4ZYyir3dCHA?si=XfIQA5z7bqYGcUr0"
-                title="YouTube Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
-          </div>
+          <YouTubeConsent />
 
         </section>
 

@@ -145,7 +145,7 @@ export default function ReservationModal({ art, onClose }: Props) {
         aria-modal="true"
         aria-labelledby="reservation-title"
         onClick={(e) => e.stopPropagation()}
-        className="w-full max-w-2xl rounded-2xl bg-[#f8f8f6] p-6 shadow-2xl sm:p-8 lg:p-10"
+        className="max-h-[calc(100dvh-3rem)] w-full max-w-2xl overflow-y-auto rounded-2xl bg-[#f8f8f6] p-6 shadow-2xl sm:p-8 lg:p-10"
       >
         {success ? (
           <div className="py-10 text-center">
@@ -173,7 +173,7 @@ export default function ReservationModal({ art, onClose }: Props) {
             </p>
 
             <p className="mt-6 leading-8 text-neutral-600">
-              Innerhalb dieser Zeit kontaktieren wir Sie, um den Kauf
+              Innerhalb dieser Zeit kontaktiert Anastasiia Sie persönlich, um den Kauf
               abzuschließen.
             </p>
 
@@ -282,6 +282,32 @@ export default function ReservationModal({ art, onClose }: Props) {
                   {errorMessage}
                 </p>
               )}
+
+              <section className="border-t border-black/10 pt-5">
+                <h3 className="text-sm uppercase tracking-[0.2em] text-neutral-500">
+                  Wie geht es danach weiter?
+                </h3>
+                <ol className="mt-4 grid gap-x-6 gap-y-2 text-sm leading-6 text-neutral-600 sm:grid-cols-2">
+                  <li>
+                    1. Ihre Reservierungsanfrage geht direkt bei Anastasiia ein.
+                  </li>
+                  <li>
+                    2. Das Kunstwerk wird für 24 Stunden für Sie reserviert.
+                  </li>
+                  <li>3. Anastasiia meldet sich persönlich bei Ihnen.</li>
+                  <li>
+                    4. Anschließend werden Kauf, Zahlung und Übergabe bzw.
+                    Versand gemeinsam abgestimmt.
+                  </li>
+                </ol>
+              </section>
+
+              <p className="leading-8 text-neutral-600">
+                Mit dem Absenden der Reservierungsanfrage kommt noch kein
+                Kaufvertrag zustande. Wir melden uns persönlich bei Ihnen, um
+                den Kauf, die Zahlung und die Übergabe bzw. den Versand zu
+                bestätigen.
+              </p>
 
               <button
                 type="submit"

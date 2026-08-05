@@ -21,7 +21,7 @@ export default function ImpressumPage() {
 
             <section>
               <h2 className="mb-4 text-2xl text-black">
-                Angaben gemäß § 5 TMG
+                Angaben gemäß § 5 DDG
               </h2>
 
               <p>
@@ -77,26 +77,7 @@ export default function ImpressumPage() {
             </section>
 
             <section>
-              <h2 className="mb-4 text-2xl text-black">
-                Online-Streitbeilegung
-              </h2>
-
               <p>
-                Die Europäische Kommission stellt eine Plattform zur
-                Online-Streitbeilegung (OS) bereit:
-              </p>
-
-              <a
-                href="https://ec.europa.eu/consumers/odr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-block underline underline-offset-4 transition hover:opacity-60"
-              >
-                https://ec.europa.eu/consumers/odr
-              </a>
-
-              <p className="mt-6">
-                Unsere E-Mail-Adresse finden Sie oben im Impressum.
                 Wir sind nicht bereit oder verpflichtet, an
                 Streitbeilegungsverfahren vor einer
                 Verbraucherschlichtungsstelle teilzunehmen.
