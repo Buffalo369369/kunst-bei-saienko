@@ -132,6 +132,42 @@ export default function AnastasiaImWunderlandPage() {
               Sichere dir dein Exemplar der ersten Auflage!
             </p>
 
+            <section
+              aria-label="Preis und Versand"
+              className="mt-10 grid border-y border-white/20 py-6 sm:grid-cols-2 sm:gap-10"
+            >
+              <div>
+                <p className="text-sm uppercase tracking-[0.3em] text-white/60">
+                  Preis
+                </p>
+                <p className="mt-3 text-[clamp(2.3rem,5vw,3.5rem)] leading-none tracking-tight">
+                  29,90 €
+                </p>
+                <p className="mt-3 text-sm leading-6 text-white/65">
+                  inkl. MwSt.
+                  <br />
+                  (Kleinunternehmer gemäß § 19 UStG)
+                </p>
+              </div>
+
+              <div className="mt-6 border-t border-white/20 pt-6 sm:mt-0 sm:border-t-0 sm:border-l sm:pl-10 sm:pt-0">
+                <p className="text-sm uppercase tracking-[0.3em] text-white/60">
+                  Versand
+                </p>
+                <p className="mt-3 leading-7 text-white/80">
+                  Versand innerhalb Deutschlands:
+                  <br />
+                  +10,00 €
+                </p>
+                <p className="mt-3 text-sm text-white/60">oder</p>
+                <p className="mt-3 leading-7 text-white/80">
+                  Kostenlose Abholung
+                  <br />
+                  (in Solingen oder bei der Buchpräsentation)
+                </p>
+              </div>
+            </section>
+
             <BookPreorderForm />
           </div>
         </section>
