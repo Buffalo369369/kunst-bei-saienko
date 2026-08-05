@@ -16,11 +16,11 @@ export default function CafesPage() {
             Cafés
           </p>
 
-          <h1 className="mb-20 text-5xl md:text-7xl tracking-tight">
+          <h1 className="mb-20 text-5xl tracking-tight md:text-7xl lg:mb-12 lg:text-[4.75rem]">
             Ausstellungen
           </h1>
 
-          <div className="space-y-20">
+          <div className="space-y-20 lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-14 lg:space-y-0">
 
             <Link
               href="/kunst/cafes/freiraum"
@@ -32,15 +32,15 @@ export default function CafesPage() {
                   src="/images/project-10.jpg"
                   alt="Wunderlich Rösterei in Solingen"
                   fill
-                  sizes="100vw"
+                  sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 45vw, 40rem"
                   className="h-full w-full object-cover transition duration-[1500ms] group-hover:scale-105"
                 />
 
               </div>
 
-              <div className="mt-6">
+              <div className="mt-6 lg:mt-5">
 
-                <h2 className="text-3xl md:text-4xl">
+                <h2 className="text-3xl md:text-4xl lg:text-[2.25rem]">
                   Wunderlich Rösterei
                 </h2>
 
@@ -62,15 +62,15 @@ export default function CafesPage() {
                   src="/images/project-20.jpg"
                   alt="Karabusta Solingen"
                   fill
-                  sizes="100vw"
+                  sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 45vw, 40rem"
                   className="h-full w-full object-cover transition duration-[1500ms] group-hover:scale-105"
                 />
 
               </div>
 
-              <div className="mt-6">
+              <div className="mt-6 lg:mt-5">
 
-                <h2 className="text-3xl md:text-4xl">
+                <h2 className="text-3xl md:text-4xl lg:text-[2.25rem]">
                   Karabusta Solingen
                 </h2>
 
@@ -92,15 +92,15 @@ export default function CafesPage() {
       src="/images/project-30.jpg"
       alt="Kunstwerke mit Lieferoption"
       fill
-      sizes="100vw"
+      sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 45vw, 40rem"
       className="h-full w-full object-cover transition duration-[1500ms] group-hover:scale-105"
     />
 
   </div>
 
-  <div className="mt-6">
+  <div className="mt-6 lg:mt-5">
 
-    <h2 className="text-3xl md:text-4xl">
+    <h2 className="text-3xl md:text-4xl lg:text-[2.25rem]">
       Kunstwerke
     </h2>
 

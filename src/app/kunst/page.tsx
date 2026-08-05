@@ -15,11 +15,11 @@ export default function KunstPage() {
             Projects
           </p>
 
-          <h1 className="mb-16 text-[clamp(3rem,8vw,6rem)] leading-none tracking-tight">
+          <h1 className="mb-16 text-[clamp(3rem,8vw,6rem)] leading-none tracking-tight lg:mb-12 lg:text-[4.75rem]">
             Kunstprojekte
           </h1>
 
-          <div className="space-y-20 lg:space-y-28">
+          <div className="space-y-20 lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-14 lg:space-y-0">
             {projects.map((project) =>
               project.available ? (
                 <Link
@@ -33,14 +33,14 @@ export default function KunstPage() {
                         src={project.image}
                         alt={project.name}
                         fill
-                        sizes="100vw"
+                        sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 45vw, 40rem"
                         className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                       />
                     </div>
                   </div>
 
-                  <div className="mt-6 space-y-2">
-                    <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-tight">
+                  <div className="mt-6 space-y-2 lg:mt-5">
+                    <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-tight lg:text-[2.25rem]">
                       {project.name}
                     </h2>
 
@@ -57,7 +57,7 @@ export default function KunstPage() {
                         src={project.image}
                         alt={project.name}
                         fill
-                        sizes="100vw"
+                        sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 45vw, 40rem"
                         className="h-full w-full object-cover blur-[3px] opacity-50"
                       />
                     </div>
@@ -71,8 +71,8 @@ export default function KunstPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 space-y-2 opacity-50">
-                    <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-tight">
+                  <div className="mt-6 space-y-2 opacity-50 lg:mt-5">
+                    <h2 className="text-[clamp(2rem,4vw,3rem)] tracking-tight lg:text-[2.25rem]">
                       {project.name}
                     </h2>
 
