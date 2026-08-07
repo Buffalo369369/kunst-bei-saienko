@@ -20,7 +20,7 @@ export default function KunstPage() {
           </h1>
 
           <div className="space-y-20 lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-14 lg:space-y-0">
-            {projects.map((project) =>
+            {projects.map((project, index) =>
               project.available ? (
                 <Link
                   key={project.slug}
@@ -33,6 +33,7 @@ export default function KunstPage() {
                         src={project.image}
                         alt={project.name}
                         fill
+                        preload={index === 0}
                         sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 45vw, 40rem"
                         className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
                       />
