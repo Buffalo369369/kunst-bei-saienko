@@ -27,8 +27,8 @@ values
     'farben-der-welt'
   ),
   (
-    'standardsunterschiede',
-    'Standardsunterschiede',
+    'standards-unterschiede',
+    'Standards-unterschiede',
     '200 €',
     '/images/fb-3.jpg',
     'Verfügbar',
