@@ -59,7 +59,7 @@ export default function CafesPage() {
               <div className="relative aspect-[16/9] overflow-hidden bg-neutral-200">
 
                 <Image
-                  src="/images/project-20.jpg"
+                  src="/images/project-202.jpg"
                   alt="Karabusta Solingen"
                   fill
                   sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 45vw, 40rem"
