@@ -5,6 +5,15 @@ import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+const artworksWithoutFrame = new Set([
+  "sonnentanz",
+  "kontinentale-kontraste",
+  "lichtspiel",
+  "globale-harmonie",
+  "herbstliches-licht",
+  "tiefsee-echo",
+]);
+
 export default async function ArtworkPage({
   params,
 }: {
@@ -58,18 +67,22 @@ export default async function ArtworkPage({
 
               <p className="lg:text-sm">Status: {art.status}</p>
 
-              <p className="lg:text-sm">Bild inklusive schwarzem Rahmen.</p>
+              {!artworksWithoutFrame.has(art.slug) && (
+                <p className="lg:text-sm">Bild inklusive schwarzem Rahmen.</p>
+              )}
             </div>
 
-            <div className="space-y-5 lg:space-y-4 lg:border-t lg:border-black/10 lg:pt-7">
-              <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-                Beschreibung
-              </p>
+            {art.description && (
+              <div className="space-y-5 lg:space-y-4 lg:border-t lg:border-black/10 lg:pt-7">
+                <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+                  Beschreibung
+                </p>
 
-              <div className="max-w-xl whitespace-pre-line text-[clamp(1rem,2vw,1.15rem)] leading-8 text-neutral-600">
-                {art.description}
+                <div className="max-w-xl whitespace-pre-line text-[clamp(1rem,2vw,1.15rem)] leading-8 text-neutral-600">
+                  {art.description}
+                </div>
               </div>
-            </div>
+            )}
 
             <ArtworkBuyButton art={art} />
           </div>

@@ -20,7 +20,7 @@ export const projects = [
     name: "Farben der Welt",
     city: "Solingen",
     image: "/images/project-3.jpg",
-    available: false,
+    available: true,
   },
 
   {

@@ -5,6 +5,7 @@ import { FormEvent, useRef, useState } from "react";
 
 type DeliveryMethod = "presentation" | "pickup_solingen" | "shipping_de";
 type PaymentMethod = "paypal" | "bank_transfer";
+type Language = "de" | "uk";
 
 const inputClassName =
   "mt-2 w-full border border-white/30 bg-white/90 px-4 py-3 text-black outline-none transition focus:border-white focus:ring-2 focus:ring-white/70";
@@ -19,6 +20,7 @@ export default function BookPreorderForm() {
   const [deliveryMethod, setDeliveryMethod] =
     useState<DeliveryMethod>("presentation");
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("paypal");
+  const [language, setLanguage] = useState<Language>("de");
   const [quantity, setQuantity] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionStatus, setSubmissionStatus] = useState<
@@ -48,6 +50,7 @@ export default function BookPreorderForm() {
           lastName: getFormValue(formData, "lastName"),
           email: getFormValue(formData, "email"),
           quantity,
+          language,
           deliveryMethod,
           street: requiresShippingAddress ? getFormValue(formData, "street") : null,
           postalCode: requiresShippingAddress
@@ -64,6 +67,7 @@ export default function BookPreorderForm() {
         formRef.current?.reset();
         setDeliveryMethod("presentation");
         setPaymentMethod("paypal");
+        setLanguage("de");
         setQuantity(1);
         setSubmissionStatus("success");
         return;
@@ -153,6 +157,51 @@ export default function BookPreorderForm() {
           />
         </label>
       </div>
+
+      <fieldset>
+        <legend className="text-[clamp(1.4rem,3vw,1.8rem)] tracking-tight">
+          Sprache der Ausgabe
+        </legend>
+
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <label
+            className={`block border p-5 transition ${
+              language === "de" ? "border-white bg-white/10" : "border-white/20"
+            }`}
+          >
+            <span className="flex items-start gap-3">
+              <input
+                required
+                type="radio"
+                name="language"
+                value="de"
+                checked={language === "de"}
+                onChange={() => setLanguage("de")}
+                className="mt-1 h-4 w-4 accent-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              />
+              <span className="block text-base">🇩🇪 Deutsch</span>
+            </span>
+          </label>
+
+          <label
+            className={`block border p-5 transition ${
+              language === "uk" ? "border-white bg-white/10" : "border-white/20"
+            }`}
+          >
+            <span className="flex items-start gap-3">
+              <input
+                type="radio"
+                name="language"
+                value="uk"
+                checked={language === "uk"}
+                onChange={() => setLanguage("uk")}
+                className="mt-1 h-4 w-4 accent-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              />
+              <span className="block text-base">🇺🇦 Українська</span>
+            </span>
+          </label>
+        </div>
+      </fieldset>
 
       <fieldset>
         <legend className="text-[clamp(1.4rem,3vw,1.8rem)] tracking-tight">

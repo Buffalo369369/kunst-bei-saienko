@@ -102,6 +102,7 @@ tracking-[-0.05em]
                 src="/images/art-1.jpg"
                 alt="Kunstwerk von Anastasiia Saienko"
                 fill
+                priority
                 sizes="(max-width: 1023px) 100vw, 50vw"
                 className="h-full w-full object-cover transition duration-[2000ms] group-hover:scale-105"
               />
@@ -171,7 +172,7 @@ tracking-[-0.05em]
         <div className="grid overflow-hidden border border-black/5 lg:grid-cols-2">
           <div className="relative aspect-square overflow-hidden bg-neutral-200">
             <Image
-              src="/images/project-666.jpg"
+              src="/images/labuba.jpg"
               alt="Kunstprojekt in einem Café"
               fill
               sizes="(max-width: 1023px) 100vw, 50vw"

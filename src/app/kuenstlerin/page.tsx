@@ -17,7 +17,7 @@ export default function KuenstlerinPage() {
 
             <div className="relative aspect-[4/5] overflow-hidden bg-neutral-200">
               <Image
-                src="/images/artist.jpg"
+                src="/images/artist10.jpg"
                 alt="Anastasiia Saienko"
                 fill
                 sizes="(max-width: 1023px) 100vw, 45vw"
@@ -122,7 +122,7 @@ export default function KuenstlerinPage() {
 
           <div className="relative aspect-[16/9] overflow-hidden bg-neutral-200">
             <Image
-              src="/images/art-1.jpg"
+              src="/images/art-10010010.jpg"
               alt="Kunstwerk von Anastasiia Saienko"
               fill
               sizes="100vw"

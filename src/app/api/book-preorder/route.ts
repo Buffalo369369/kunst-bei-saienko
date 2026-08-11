@@ -19,6 +19,7 @@ const ALLOWED_FIELDS = new Set([
   "lastName",
   "email",
   "quantity",
+  "language",
   "deliveryMethod",
   "street",
   "postalCode",
@@ -35,15 +36,18 @@ const deliveryMethods = new Set([
 ]);
 
 const paymentMethods = new Set(["paypal", "bank_transfer"]);
+const languages = new Set(["de", "uk"]);
 
 type DeliveryMethod = "presentation" | "pickup_solingen" | "shipping_de";
 type PaymentMethod = "paypal" | "bank_transfer";
+type Language = "de" | "uk";
 
 type BookPreorderInput = {
   firstName: string;
   lastName: string;
   email: string;
   quantity: number;
+  language: Language;
   deliveryMethod: DeliveryMethod;
   street: string | null;
   postalCode: string | null;
@@ -105,6 +109,8 @@ function parseBookPreorderInput(body: unknown): BookPreorderInput | null {
     !Number.isInteger(quantity) ||
     quantity < 1 ||
     quantity > 20 ||
+    typeof body.language !== "string" ||
+    !languages.has(body.language) ||
     typeof body.deliveryMethod !== "string" ||
     !deliveryMethods.has(body.deliveryMethod) ||
     typeof body.paymentMethod !== "string" ||
@@ -127,6 +133,7 @@ function parseBookPreorderInput(body: unknown): BookPreorderInput | null {
       lastName,
       email: email.toLowerCase(),
       quantity,
+      language: body.language as Language,
       deliveryMethod,
       street: null,
       postalCode: null,
@@ -141,6 +148,7 @@ function parseBookPreorderInput(body: unknown): BookPreorderInput | null {
     lastName,
     email: email.toLowerCase(),
     quantity,
+    language: body.language as Language,
     deliveryMethod,
     street,
     postalCode,
@@ -169,6 +177,15 @@ function getPaymentLabel(paymentMethod: PaymentMethod) {
   return labels[paymentMethod];
 }
 
+function getLanguageLabel(language: Language) {
+  const labels: Record<Language, string> = {
+    de: "Deutsch",
+    uk: "Українська",
+  };
+
+  return labels[language];
+}
+
 async function notifyTelegram(preorder: BookPreorderInput) {
   const address = preorder.deliveryMethod === "shipping_de"
     ? `${preorder.street}\n${preorder.postalCode} ${preorder.city}`
@@ -191,6 +208,9 @@ ${preorder.email}
 
 Anzahl:
 ${preorder.quantity}
+
+Sprache der Ausgabe:
+${getLanguageLabel(preorder.language)}
 
 Abholung / Versand:
 ${getDeliveryLabel(preorder.deliveryMethod)}
@@ -250,6 +270,7 @@ export async function POST(request: Request) {
     last_name: preorder.lastName,
     email: preorder.email,
     quantity: preorder.quantity,
+    language: preorder.language,
     delivery_method: preorder.deliveryMethod,
     street: preorder.street,
     postal_code: preorder.postalCode,
