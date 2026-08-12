@@ -255,7 +255,7 @@ export default function BookPreorderForm() {
                 className="mt-1 h-4 w-4 accent-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               />
               <span>
-                <span className="block text-base">Persönliche Abholung in Solingen</span>
+                <span className="block text-base">Persönliche Abholung nach Absprache</span>
                 <span className="mt-3 block text-sm">Kostenlos</span>
               </span>
             </span>
