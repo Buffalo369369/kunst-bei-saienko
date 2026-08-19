@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import BookPreorderForm from "@/components/BookPreorderForm";
 import Navbar from "@/components/Navbar";
 import WonderlandQuotes from "@/components/WonderlandQuotes";
+import YouTubeConsent from "@/components/YouTubeConsent";
 
 const bookCoverSrc = "/images/project-5.jpg";
 
@@ -115,6 +116,13 @@ export default function AnastasiaImWunderlandPage() {
               exklusiver Bonus für Vorbesteller, die ihr Exemplar vor Ort
               abholen.
             </p>
+
+            <div className="mt-10">
+              <YouTubeConsent
+                videoId="VNg7FmCM9tU"
+                title="Buchpräsentation von Anastasia im Wunderland auf YouTube"
+              />
+            </div>
           </div>
         </section>
 

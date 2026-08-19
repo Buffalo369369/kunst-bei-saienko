@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 
-export default function YouTubeConsent() {
+type YouTubeConsentProps = {
+  videoId?: string;
+  title?: string;
+};
+
+export default function YouTubeConsent({
+  videoId = "4ZYyir3dCHA",
+  title = "Video-Porträt von Anastasiia Saienko auf YouTube",
+}: YouTubeConsentProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   return (
@@ -11,8 +19,8 @@ export default function YouTubeConsent() {
         {isLoaded ? (
           <iframe
             className="h-full w-full"
-            src="https://www.youtube-nocookie.com/embed/4ZYyir3dCHA?si=XfIQA5z7bqYGcUr0"
-            title="Video-Porträt von Anastasiia Saienko auf YouTube"
+            src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+            title={title}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
