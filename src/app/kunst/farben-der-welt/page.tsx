@@ -5,6 +5,20 @@ import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
+const artworkOrder = [
+  "verschmelzung-von-formen",
+  "einfach-und-komplex",
+  "standards-unterschiede",
+  "sonnentanz",
+  "kontinentale-kontraste",
+  "lichtspiel",
+  "globale-harmonie",
+  "herbstliches-licht",
+  "tiefsee-echo",
+];
+
 export default async function FarbenDerWeltPage() {
   const { data: artworks, error } = await supabase
     .from("artworks")
@@ -14,6 +28,12 @@ export default async function FarbenDerWeltPage() {
   if (error) {
     console.error(error);
   }
+
+  const orderedArtworks = [...(artworks ?? [])].sort(
+    (firstArtwork, secondArtwork) =>
+      artworkOrder.indexOf(firstArtwork.slug) -
+      artworkOrder.indexOf(secondArtwork.slug)
+  );
 
   return (
     <>
@@ -51,7 +71,7 @@ Die kräftigen Blau-, Gelb- und Grüntöne fließen ineinander über, überschre
           </h2>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
-            {(artworks ?? []).map((art) => (
+            {orderedArtworks.map((art) => (
               <Link
                 key={art.slug}
                 href={`/kunst/${art.slug}`}
