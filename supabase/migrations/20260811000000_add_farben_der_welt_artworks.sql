@@ -11,7 +11,7 @@ values
   (
     'verschmelzung-von-formen',
     'Verschmelzung von Formen',
-    '200 €',
+    '250 €',
     '/images/fb-1.jpg',
     'Verfügbar',
     '',
@@ -20,7 +20,7 @@ values
   (
     'einfach-und-komplex',
     'Einfach und komplex',
-    '200 €',
+    '250 €',
     '/images/fb-2.jpg',
     'Verfügbar',
     '',
@@ -29,7 +29,7 @@ values
   (
     'standards-unterschiede',
     'Standards-unterschiede',
-    '200 €',
+    '250 €',
     '/images/fb-3.jpg',
     'Verfügbar',
     '',
