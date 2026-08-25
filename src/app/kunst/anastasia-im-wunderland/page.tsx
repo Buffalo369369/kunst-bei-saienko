@@ -105,16 +105,35 @@ export default function AnastasiaImWunderlandPage() {
               Buchpräsentation
             </p>
 
-            <h2 className="mt-5 text-[clamp(2.3rem,5vw,3.5rem)] tracking-tight">
-              09.10.2026 · 16:30 Uhr
-              <br />
-              Stadtbibliothek Solingen
-            </h2>
+            <div className="mt-5 space-y-8">
+              <div>
+                <h2 className="text-[clamp(2.3rem,5vw,3.5rem)] tracking-tight">
+                  09.10.2026 · 16:30 Uhr
+                </h2>
+                <p className="mt-2 text-[clamp(1.35rem,3vw,1.8rem)] tracking-tight">
+                  Stadtbibliothek Solingen
+                </p>
+              </div>
+
+              <div className="border-t border-black/10 pt-8">
+                <h3 className="text-[clamp(2.3rem,5vw,3.5rem)] tracking-tight">
+                  25.10.2026 · 11:00 Uhr
+                </h3>
+                <p className="mt-2 text-[clamp(1.35rem,3vw,1.8rem)] tracking-tight">
+                  Sotano Theaterproduktionen
+                </p>
+                <p className="mt-2 leading-7 text-neutral-600">
+                  Frohnhauser Straße 219
+                  <br />
+                  45144 Essen
+                </p>
+              </div>
+            </div>
 
             <p className="mt-6 max-w-2xl leading-8 text-neutral-600">
               Persönliche Begegnung, Buchvorstellung und ein kleiner
-              exklusiver Bonus für Vorbesteller, die ihr Exemplar vor Ort
-              abholen.
+              exklusiver Bonus für Vorbesteller, die ihr Exemplar bei einer
+              Buchpräsentation abholen.
             </p>
 
             <div className="mt-10">

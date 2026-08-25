@@ -228,7 +228,7 @@ export default function BookPreorderForm() {
               <span>
                 <span className="block text-base">Selbstabholung bei der Buchpräsentation</span>
                 <span className="mt-1 block text-sm leading-6 text-white/65">
-                  09.10.2026 · 16:30 Uhr · Stadtbibliothek Solingen
+                  Der Termin wird nach der Vorbestellungsanfrage gemeinsam bestätigt.
                 </span>
                 <span className="mt-3 block text-sm">Kostenlos</span>
                 <span className="mt-1 block text-sm leading-6 text-white/65">
