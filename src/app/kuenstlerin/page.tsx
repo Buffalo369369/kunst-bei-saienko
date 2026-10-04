@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import YouTubeConsent from "@/components/YouTubeConsent";
+import PressSection, { pressArticles } from "@/components/PressSection";
 
 export default function KuenstlerinPage() {
   return (
@@ -15,7 +16,7 @@ export default function KuenstlerinPage() {
         <section className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16 lg:px-10 lg:py-20">
           <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
 
-            <div className="relative aspect-[4/5] overflow-hidden bg-neutral-200">
+            <div className="relative aspect-4/5 overflow-hidden bg-neutral-200">
               <Image
                 src="/images/artist10.jpg"
                 alt="Anastasiia Saienko"
@@ -75,6 +76,19 @@ export default function KuenstlerinPage() {
 
         </section>
 
+        {/* PRESSE & MEDIEN */}
+        <PressSection
+          eyebrow="Presse &amp; Medien"
+          heading="PRESSE &amp; MEDIEN"
+          description="Einblicke, Berichte und Veröffentlichungen. Hier finden Sie ausgewählte Presseartikel über meine künstlerischen Projekte, Ausstellungen und meinen Weg."
+          collageImages={{
+            left: "/images/statya1.jpg",
+            center: "/images/statya.jpg",
+            right: "/images/statya2.jpg",
+          }}
+          articles={pressArticles}
+        />
+
         {/* WHY BEI */}
         <section className="mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-20">
 
@@ -120,7 +134,7 @@ export default function KuenstlerinPage() {
         {/* IMAGE */}
         <section className="mx-auto max-w-7xl px-6 py-14 md:px-8 md:py-16 lg:px-10">
 
-          <div className="relative aspect-[16/9] overflow-hidden bg-neutral-200">
+          <div className="relative aspect-video overflow-hidden bg-neutral-200">
             <Image
               src="/images/art-10010010.jpg"
               alt="Kunstwerk von Anastasiia Saienko"
