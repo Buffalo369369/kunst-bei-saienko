@@ -5,36 +5,43 @@ import Navbar from "@/components/Navbar";
 
 const products = [
 	{
-  title: "Handbemalte Tasche №1",
+		title: "Handbemalte Tasche №01",
 		price: "50 €",
 		image: "/images/bag-10.jpg",
-		cta: "Anfragen",
+		slug: "handbemalte-tasche-1",
 	},
 	{
-		title: "Handbemalte Tasche №2",
+		title: "Handbemalte Tasche №02",
 		price: "50 €",
 		image: "/images/bag-20.jpg",
-		cta: "Anfragen",
+		slug: "handbemalte-tasche-2",
 	},
 	{
-		title: "Handbemalte Tasche №3",
+		title: "Handbemalte Tasche №03",
 		price: "50 €",
 		image: "/images/bag-30.jpg",
-		cta: "Anfragen",
+		slug: "handbemalte-tasche-3",
 	},
 	{
-		title: "Handbemalte Tasche №4",
+		title: "Handbemalte Tasche №04",
 		price: "50 €",
 		image: "/images/bag-40.jpg",
-		cta: "Anfragen",
+		slug: "handbemalte-tasche-4",
 	},
 	{
-		title: "Handbemalte Tasche №5",
+		title: "Handbemalte Tasche №05",
 		price: "50 €",
 		image: "/images/bag-50.jpg",
-		cta: "Anfragen",
+		slug: "handbemalte-tasche-5",
 	},
 ];
+
+const book = {
+	title: "Anastasia im Wunderland",
+	price: "29,90 €",
+	image: "/images/project-404.jpg",
+	href: "/kunst/anastasia-im-wunderland",
+};
 
 export default function ShopPage() {
 	return (
@@ -42,83 +49,77 @@ export default function ShopPage() {
 			<Navbar />
 
 			<main className="min-h-screen bg-[#f8f8f6] text-black">
-				<section className="mx-auto max-w-7xl px-6 py-12 md:px-8 md:py-16 lg:px-10 lg:py-20">
+				<section className="mx-auto max-w-7xl px-6 py-16 md:px-8 lg:px-10 lg:py-20">
 					<div className="mx-auto max-w-2xl text-center">
 						<p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
 							Shop
 						</p>
 
 						<h1 className="mt-4 text-[clamp(2rem,5vw,3.2rem)] leading-tight tracking-tight">
-							Kunst zum Entdecken,<br />Verschenken & Mitnehmen.
+							Kunst zum Entdecken,
+							<br />
+							Verschenken &amp; Mitnehmen.
 						</h1>
 
 						<p className="mx-auto mt-5 max-w-xl text-[clamp(0.95rem,1.5vw,1.05rem)] leading-7 text-neutral-600">
-							Im Shop findest du besondere Werke und Produkte von Anastasiia Saienko – von handgefertigten Unikaten und kleinen Kunstobjekten bis hin zu Büchern, Art-Merch und weiteren ausgewählten Kreationen.
-              </p>
-
-<p className="mx-auto mt-5 max-w-xl text-[clamp(0.95rem,1.5vw,1.05rem)] leading-7 text-neutral-600">
-Jedes Stück trägt ein Teil meiner Kunst und meiner Geschichte in sich.
-</p>
-
-<p className="mx-auto mt-5 max-w-xl text-[clamp(0.95rem,1.5vw,1.05rem)] leading-7 text-neutral-1000">
-Entdecke dein Lieblingsstück. 
+							Besondere Werke, Bücher und Produkte von Anastasiia Saienko. Jedes
+							Stück trägt einen Teil meiner Kunst und meiner Geschichte in sich.
 						</p>
 					</div>
 
-					<div className="mx-auto mt-12 grid max-w-6xl gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-<Link href="/kunst/anastasia-im-wunderland" className="group">
-						<article className="flex flex-col">
-							<div className="relative aspect-square overflow-hidden bg-neutral-200">
-								<Image
-									src="/images/project-404.jpg"
-									alt="Anastasia im Wunderland"
-									fill
-									sizes="(max-width: 639px) calc(100vw - 3rem), (max-width: 1023px) calc(50vw - 1.5rem), (max-width: 1279px) calc(33vw - 1.25rem), calc(25vw - 1rem)"
-									className="object-cover transition duration-500 group-hover:scale-[1.03]"
-								/>
-							</div>
-
-							<div className="mt-3">
-								<p className="text-xs uppercase tracking-[0.2em] text-neutral-500">
-									Buch
-								</p>
-								<h2 className="mt-3 text-lg leading-tight tracking-tight">
-									Anastasia im Wunderland
-								</h2>
-								<p className="mt-2 text-sm text-neutral-700">29,90 €</p>
-							</div>
-						</article>
-					</Link>
-
-						{products.map((product) => (
-							<article key={product.title} className="group flex flex-col">
+					<div className="mx-auto mt-12 grid max-w-6xl grid-cols-2 gap-4 md:grid-cols-3 md:gap-5 xl:grid-cols-4">
+						<Link href={book.href} className="group block h-full">
+							<article className="flex h-full flex-col">
 								<div className="relative aspect-square overflow-hidden bg-neutral-200">
 									<Image
-										src={product.image}
-										alt={product.title}
+										src={book.image}
+										alt={book.title}
 										fill
-										sizes="(max-width: 639px) calc(100vw - 3rem), (max-width: 1023px) calc(50vw - 1.5rem), (max-width: 1279px) calc(33vw - 1.25rem), calc(25vw - 1rem)"
+										sizes="(max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
 										className="object-cover transition duration-500 group-hover:scale-[1.03]"
 									/>
 								</div>
 
-								<div className="mt-3">
-									<h2 className="text-lg leading-tight tracking-tight">
-										{product.title}
-									</h2>
-
-									<p className="mt-2 text-sm text-neutral-700">
-										{product.price}
+								<div className="mt-3 space-y-2">
+									<p className="text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+										Buch
 									</p>
-
-									<button
-										type="button"
-										className="mt-4 inline-flex border border-black bg-white px-3.5 py-2 text-xs uppercase tracking-[0.2em] text-black transition hover:bg-black hover:text-white"
-									>
-										{product.cta}
-									</button>
+									<h2 className="text-base leading-tight tracking-tight md:text-lg">
+										{book.title}
+									</h2>
+									<p className="text-sm text-neutral-700">{book.price}</p>
 								</div>
 							</article>
+						</Link>
+
+						{products.map((product) => (
+							<Link
+								key={product.slug}
+								href={`/shop/${product.slug}`}
+								className="group block h-full"
+							>
+								<article className="flex h-full flex-col">
+									<div className="relative aspect-square overflow-hidden bg-neutral-200">
+										<Image
+											src={product.image}
+											alt={product.title}
+											fill
+											sizes="(max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
+											className="object-cover transition duration-500 group-hover:scale-[1.03]"
+										/>
+									</div>
+
+									<div className="mt-3 space-y-2">
+										<h2 className="text-base leading-tight tracking-tight md:text-lg">
+											{product.title}
+										</h2>
+
+										<p className="text-sm text-neutral-700">
+											{product.price}
+										</p>
+									</div>
+								</article>
+							</Link>
 						))}
 					</div>
 				</section>

@@ -145,7 +145,7 @@ export default function KuenstlerinPage() {
           </div>
 
         </section>
-
+        
         {/* CTA */}
         <section className="mx-auto max-w-4xl px-6 pt-6 pb-20 text-center md:px-8">
 
@@ -170,8 +170,10 @@ export default function KuenstlerinPage() {
           </Link>
 
         </section>
+        
 
       </main>
+    
 
       <Footer />
     </>

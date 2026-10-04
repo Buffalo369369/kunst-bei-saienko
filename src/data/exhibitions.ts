@@ -22,7 +22,7 @@ Genießen Sie Ihren Kaffee – und die Kunst.
     slug: "morgenlicht",
     name: "Karabusta Solingen",
     city: "Solingen",
-    image: "/images/project-202.jpg",
+    image: "/images/project-2020.jpg",
     description:  `
 Liebe Kaffeeliebhaber und Kunstfreunde,
 
