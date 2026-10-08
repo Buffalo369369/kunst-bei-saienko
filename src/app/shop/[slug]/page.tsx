@@ -10,6 +10,10 @@ const bagProducts = [
     title: "Handbemalte Tasche 01",
     price: "50 €",
     image: "/images/bag-10.jpg",
+    size: "26 × 26 × 15 cm",
+    uniquenessTitle: "Handbemaltes Unikat",
+    uniquenessDescription:
+      "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
   },
@@ -18,6 +22,10 @@ const bagProducts = [
     title: "Handbemalte Tasche 02",
     price: "50 €",
     image: "/images/bag-20.jpg",
+    size: "26 × 26 × 15 cm",
+    uniquenessTitle: "Handbemaltes Unikat",
+    uniquenessDescription:
+      "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
   },
@@ -26,6 +34,10 @@ const bagProducts = [
     title: "Handbemalte Tasche 03",
     price: "50 €",
     image: "/images/bag-30.jpg",
+    size: "26 × 26 × 15 cm",
+    uniquenessTitle: "Handbemaltes Unikat",
+    uniquenessDescription:
+      "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
   },
@@ -34,6 +46,10 @@ const bagProducts = [
     title: "Handbemalte Tasche 04",
     price: "50 €",
     image: "/images/bag-40.jpg",
+    size: "26 × 26 × 15 cm",
+    uniquenessTitle: "Handbemaltes Unikat",
+    uniquenessDescription:
+      "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
   },
@@ -42,6 +58,10 @@ const bagProducts = [
     title: "Handbemalte Tasche 05",
     price: "50 €",
     image: "/images/bag-50.jpg",
+    size: "26 × 26 × 15 cm",
+    uniquenessTitle: "Handbemaltes Unikat",
+    uniquenessDescription:
+      "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
   },
@@ -106,18 +126,15 @@ export default async function ShopBagPage({
 
             <div className="space-y-3 text-[clamp(1rem,2vw,1.15rem)] text-neutral-600 lg:space-y-2 lg:text-base">
               <p className="lg:text-lg lg:font-medium lg:text-black">{product.price}</p>
-              <p className="lg:text-sm">One-of-one artwork</p>
-              <p className="lg:text-sm">Maße: ca. 35 × 30 cm</p>
-              <p className="lg:text-sm">Material: 100 % Baumwolle</p>
-            </div>
 
-            <div className="space-y-5 lg:space-y-4 lg:border-t lg:border-black/10 lg:pt-7">
-              <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-                Beschreibung
-              </p>
-
-              <div className="max-w-xl whitespace-pre-line text-[clamp(1rem,2vw,1.15rem)] leading-8 text-neutral-600">
-                {product.description}
+              <div className="space-y-4 pt-1 text-neutral-600">
+                <p className="text-sm text-neutral-500">Größe: {product.size}</p>
+                <p className="text-sm uppercase tracking-[0.25em] text-neutral-500">
+                  {product.uniquenessTitle}
+                </p>
+                <div className="max-w-xl whitespace-pre-line text-[clamp(1rem,2vw,1.15rem)] leading-8 text-neutral-600">
+                  {product.uniquenessDescription}
+                </div>
               </div>
             </div>
 
