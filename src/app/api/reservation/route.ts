@@ -215,18 +215,51 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid request" }, { status: 400 });
   }
 
-  const { data, error } = await supabaseAdmin.rpc("reserve_artwork", {
-    p_artwork_slug: reservation.slug,
-    p_first_name: reservation.firstName,
-    p_last_name: reservation.lastName,
-    p_email: reservation.email,
-    p_phone: reservation.phone,
-    p_message: reservation.message,
-    p_product_type: reservation.productType,
-  });
+  const rpcName = reservation.productType === "shop" ? "reserve_product" : "reserve_artwork";
+  const rpcArgs =
+    reservation.productType === "shop"
+      ? {
+          p_artwork_slug: reservation.slug,
+          p_first_name: reservation.firstName,
+          p_last_name: reservation.lastName,
+          p_email: reservation.email,
+          p_phone: reservation.phone,
+          p_message: reservation.message,
+          p_product_type: reservation.productType,
+        }
+      : {
+          p_artwork_slug: reservation.slug,
+          p_first_name: reservation.firstName,
+          p_last_name: reservation.lastName,
+          p_email: reservation.email,
+          p_phone: reservation.phone,
+          p_message: reservation.message,
+        };
+
+  const { data, error } = await supabaseAdmin.rpc(rpcName, rpcArgs);
 
   if (error || !data || typeof data !== "object") {
-    console.error("Reservation database operation failed", { code: error?.code });
+    console.error("Reservation RPC failed", {
+      rpc: rpcName,
+      productType: reservation.productType,
+      code: error?.code,
+      message: error?.message,
+      details: error?.details,
+      hint: error?.hint,
+    });
+
+    if (process.env.NODE_ENV === "development") {
+      return NextResponse.json(
+        {
+          error: error?.message ?? "Reservation failed",
+          code: error?.code ?? null,
+          details: error?.details ?? null,
+          hint: error?.hint ?? null,
+        },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json({ error: "Reservation failed" }, { status: 500 });
   }
 
@@ -245,7 +278,11 @@ export async function POST(request: Request) {
     typeof result.title !== "string" ||
     typeof result.price !== "string"
   ) {
-    console.error("Reservation database operation returned an invalid outcome");
+    console.error("Reservation database operation returned an invalid outcome", {
+      rpc: rpcName,
+      productType: reservation.productType,
+      result,
+    });
     return NextResponse.json({ error: "Reservation failed" }, { status: 500 });
   }
 
