@@ -4,6 +4,7 @@ import { telegramChatId, telegramToken } from "@/lib/server/env";
 
 const MAX_LENGTHS = {
   slug: 160,
+  productType: 32,
   firstName: 80,
   lastName: 80,
   email: 254,
@@ -13,6 +14,7 @@ const MAX_LENGTHS = {
 
 const ALLOWED_FIELDS = new Set([
   "slug",
+  "productType",
   "firstName",
   "lastName",
   "email",
@@ -23,6 +25,7 @@ const ALLOWED_FIELDS = new Set([
 
 type ReservationInput = {
   slug: string;
+  productType: "artwork" | "shop";
   firstName: string;
   lastName: string;
   email: string;
@@ -82,11 +85,18 @@ function parseReservationInput(body: unknown): ReservationInput | null {
   }
 
   const slug = readRequiredString(body.slug, MAX_LENGTHS.slug);
+  const productTypeValue = readRequiredString(
+    body.productType,
+    MAX_LENGTHS.productType
+  );
   const firstName = readRequiredString(body.firstName, MAX_LENGTHS.firstName);
   const lastName = readRequiredString(body.lastName, MAX_LENGTHS.lastName);
   const email = readRequiredString(body.email, MAX_LENGTHS.email);
   const phone = readOptionalString(body.phone, MAX_LENGTHS.phone);
   const message = readOptionalString(body.message, MAX_LENGTHS.message);
+
+  const productType =
+    productTypeValue === "shop" ? "shop" : "artwork";
 
   if (
     !slug ||
@@ -102,6 +112,7 @@ function parseReservationInput(body: unknown): ReservationInput | null {
 
   return {
     slug,
+    productType,
     firstName,
     lastName,
     email: email.toLowerCase(),
@@ -112,16 +123,43 @@ function parseReservationInput(body: unknown): ReservationInput | null {
 
 async function notifyTelegram(
   reservation: ReservationInput,
-  artwork: Required<Pick<ReservationResult, "title" | "price">>
+  item: Required<Pick<ReservationResult, "title" | "price">>
 ) {
-  const message = `
+  const isShop = reservation.productType === "shop";
+
+  const message = isShop
+    ? `
+🎨 Neue Reservierung
+
+Produkt:
+${item.title}
+
+Typ:
+Shop
+
+Preis:
+${item.price}
+
+Name:
+${reservation.firstName} ${reservation.lastName}
+
+E-Mail:
+${reservation.email}
+
+Telefon:
+${reservation.phone ?? ""}
+
+Nachricht:
+${reservation.message ?? ""}
+`
+    : `
 🎨 Neue Reservierung
 
 Bild:
-${artwork.title}
+${item.title}
 
 Preis:
-${artwork.price}
+${item.price}
 
 Vorname:
 ${reservation.firstName}
@@ -184,6 +222,7 @@ export async function POST(request: Request) {
     p_email: reservation.email,
     p_phone: reservation.phone,
     p_message: reservation.message,
+    p_product_type: reservation.productType,
   });
 
   if (error || !data || typeof data !== "object") {

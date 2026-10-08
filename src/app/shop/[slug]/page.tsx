@@ -16,6 +16,9 @@ const bagProducts = [
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
+    status: "Verfügbar",
+    reserved_until: null,
+    productType: "shop",
   },
   {
     slug: "handbemalte-tasche-2",
@@ -28,6 +31,9 @@ const bagProducts = [
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
+    status: "Verfügbar",
+    reserved_until: null,
+    productType: "shop",
   },
   {
     slug: "handbemalte-tasche-3",
@@ -40,6 +46,9 @@ const bagProducts = [
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
+    status: "Verfügbar",
+    reserved_until: null,
+    productType: "shop",
   },
   {
     slug: "handbemalte-tasche-4",
@@ -52,6 +61,9 @@ const bagProducts = [
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
+    status: "Verfügbar",
+    reserved_until: null,
+    productType: "shop",
   },
   {
     slug: "handbemalte-tasche-5",
@@ -64,6 +76,9 @@ const bagProducts = [
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
     description:
       "Handbemalte Baumwolltasche mit lebendigen Farben und einer einzigartigen, künstlerischen Oberfläche. Jedes Stück ist ein One-of-one-Kunstobjekt aus der Shop-Kollektion.",
+    status: "Verfügbar",
+    reserved_until: null,
+    productType: "shop",
   },
 ] as const;
 
@@ -89,10 +104,11 @@ export default async function ShopBagPage({
     title: product.title,
     image: product.image,
     price: product.price,
-    status: "Verfügbar",
+    status: product.status,
     exhibition: "Shop",
     description: product.description,
-    reserved_until: null,
+    reserved_until: product.reserved_until,
+    productType: product.productType,
   };
 
   return (
@@ -136,6 +152,11 @@ export default async function ShopBagPage({
                   {product.uniquenessDescription}
                 </div>
               </div>
+            </div>
+
+            <div className="flex items-center gap-3 text-sm uppercase tracking-[0.2em] text-neutral-500">
+              <span>Status:</span>
+              <span>{art.status}</span>
             </div>
 
             <ArtworkBuyButton art={art} />

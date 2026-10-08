@@ -2,7 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 
-type Artwork = {
+type ReservationItem = {
   id: number;
   slug: string;
   title: string;
@@ -12,10 +12,11 @@ type Artwork = {
   exhibition: string;
   description: string;
   reserved_until: string | null;
+  productType?: "artwork" | "shop";
 };
 
 type Props = {
-  art: Artwork;
+  art: ReservationItem;
   onClose: () => void;
 };
 
@@ -97,6 +98,7 @@ export default function ReservationModal({ art, onClose }: Props) {
         },
         body: JSON.stringify({
           slug: art.slug,
+          productType: art.productType ?? "artwork",
           firstName,
           lastName,
           email,
@@ -311,12 +313,7 @@ export default function ReservationModal({ art, onClose }: Props) {
 
               <button
                 type="submit"
-                disabled={
-                  loading ||
-                  !firstName ||
-                  !lastName ||
-                  !email
-                }
+                disabled={loading || !firstName || !lastName || !email}
                 className="mt-4 w-full bg-black py-4 text-sm uppercase tracking-[0.2em] text-white transition hover:bg-neutral-800 disabled:cursor-not-allowed disabled:bg-neutral-400"
               >
                 {loading ? "Reservieren..." : "Reservieren"}

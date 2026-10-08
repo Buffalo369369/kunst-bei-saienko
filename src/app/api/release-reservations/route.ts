@@ -24,10 +24,10 @@ export async function GET(request: Request) {
 
   const now = new Date().toISOString();
 
-  // Находим все просроченные брони
-  const { data: artworks, error } = await supabaseAdmin
+  const { data: expiredItems, error } = await supabaseAdmin
     .from("artworks")
     .select("id")
+    .in("product_type", ["artwork", "shop"])
     .eq("status", "Reserviert")
     .lt("reserved_until", now);
 
@@ -40,14 +40,13 @@ export async function GET(request: Request) {
     });
   }
 
-  if (!artworks || artworks.length === 0) {
+  if (!expiredItems || expiredItems.length === 0) {
     return NextResponse.json({
       success: true,
       released: 0,
     });
   }
 
-  // Освобождаем их
   const { error: updateError } = await supabaseAdmin
     .from("artworks")
     .update({
@@ -56,7 +55,7 @@ export async function GET(request: Request) {
     })
     .in(
       "id",
-      artworks.map((art) => art.id)
+      expiredItems.map((item) => item.id)
     );
 
   if (updateError) {
@@ -70,6 +69,6 @@ export async function GET(request: Request) {
 
   return NextResponse.json({
     success: true,
-    released: artworks.length,
+    released: expiredItems.length,
   });
 }

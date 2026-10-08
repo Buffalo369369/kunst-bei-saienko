@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ReservationModal from "./ReservationModal";
 
-type Artwork = {
+type ReservationItem = {
   id: number;
   slug: string;
   title: string;
@@ -13,12 +13,13 @@ type Artwork = {
   exhibition: string;
   description: string;
   reserved_until: string | null;
+  productType?: "artwork" | "shop";
 };
 
 export default function ArtworkBuyButton({
   art,
 }: {
-  art: Artwork;
+  art: ReservationItem;
 }) {
   const [showModal, setShowModal] = useState(false);
   const [currentTime] = useState(() => Date.now());
