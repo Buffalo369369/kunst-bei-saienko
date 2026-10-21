@@ -160,7 +160,7 @@ function parseBookPreorderInput(body: unknown): BookPreorderInput | null {
 
 function getDeliveryLabel(deliveryMethod: DeliveryMethod) {
   const labels: Record<DeliveryMethod, string> = {
-    presentation: "Buchpräsentation · 09.10.2026 · Stadtbibliothek Solingen",
+    presentation: "Buchpräsentation (Termin wird persönlich bestätigt)",
     pickup_solingen: "Persönliche Abholung nach Absprache",
     shipping_de: "Postversand innerhalb Deutschlands (+ 10,00 € Versand)",
   };

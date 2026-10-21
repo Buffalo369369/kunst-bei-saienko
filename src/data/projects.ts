@@ -28,7 +28,7 @@ export const projects = [
     name: "Die andere Hand der Liebe",
     city: "Essen",
     image: "/images/project-2.jpg",
-    available: false,
+    available: true,
   },
 
 ];

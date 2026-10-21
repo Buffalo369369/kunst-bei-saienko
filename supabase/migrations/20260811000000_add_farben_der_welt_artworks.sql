@@ -94,6 +94,5 @@ set
   title = excluded.title,
   price = excluded.price,
   image = excluded.image,
-  status = excluded.status,
   description = excluded.description,
   exhibition = excluded.exhibition;

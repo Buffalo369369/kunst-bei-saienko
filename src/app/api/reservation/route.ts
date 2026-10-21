@@ -95,8 +95,11 @@ function parseReservationInput(body: unknown): ReservationInput | null {
   const phone = readOptionalString(body.phone, MAX_LENGTHS.phone);
   const message = readOptionalString(body.message, MAX_LENGTHS.message);
 
-  const productType =
-    productTypeValue === "shop" ? "shop" : "artwork";
+  if (productTypeValue !== "artwork" && productTypeValue !== "shop") {
+    return null;
+  }
+
+  const productType = productTypeValue;
 
   if (
     !slug ||

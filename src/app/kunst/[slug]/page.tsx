@@ -5,15 +5,6 @@ import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-const artworksWithoutFrame = new Set([
-  "sonnentanz",
-  "kontinentale-kontraste",
-  "lichtspiel",
-  "globale-harmonie",
-  "herbstliches-licht",
-  "tiefsee-echo",
-]);
-
 export default async function ArtworkPage({
   params,
 }: {
@@ -25,6 +16,7 @@ export default async function ArtworkPage({
     .from("artworks")
     .select("*")
     .eq("slug", slug)
+    .eq("product_type", "artwork")
     .single();
 
   if (error || !art) {
@@ -67,9 +59,6 @@ export default async function ArtworkPage({
 
               <p className="lg:text-sm">Status: {art.status}</p>
 
-              {!artworksWithoutFrame.has(art.slug) && (
-                <p className="lg:text-sm">Bild inklusive schwarzem Rahmen.</p>
-              )}
             </div>
 
             {art.description && (

@@ -23,6 +23,7 @@ export default function FeaturedArtworks() {
       const { data, error } = await supabase
         .from("artworks")
         .select("*")
+        .eq("product_type", "artwork")
         .order("id")
         .limit(4);
 

@@ -3,6 +3,9 @@ import Footer from "@/components/Footer";
 import ArtworkBuyButton from "@/components/ArtworkBuyButton";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { supabase } from "@/lib/supabase";
+
+export const dynamic = "force-dynamic";
 
 const bagProducts = [
   {
@@ -10,7 +13,7 @@ const bagProducts = [
     title: "Handbemalte Tasche 01",
     price: "50 €",
     image: "/images/bag-10.jpg",
-    size: "26 × 26 × 15 cm",
+    size: "26 × 20 × 15 cm",
     uniquenessTitle: "Handbemaltes Unikat",
     uniquenessDescription:
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
@@ -25,7 +28,7 @@ const bagProducts = [
     title: "Handbemalte Tasche 02",
     price: "50 €",
     image: "/images/bag-20.jpg",
-    size: "26 × 26 × 15 cm",
+    size: "26 × 20 × 15 cm",
     uniquenessTitle: "Handbemaltes Unikat",
     uniquenessDescription:
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
@@ -40,7 +43,7 @@ const bagProducts = [
     title: "Handbemalte Tasche 03",
     price: "50 €",
     image: "/images/bag-30.jpg",
-    size: "26 × 26 × 15 cm",
+    size: "26 × 20 × 15 cm",
     uniquenessTitle: "Handbemaltes Unikat",
     uniquenessDescription:
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
@@ -55,7 +58,7 @@ const bagProducts = [
     title: "Handbemalte Tasche 04",
     price: "50 €",
     image: "/images/bag-40.jpg",
-    size: "26 × 26 × 15 cm",
+    size: "26 × 20 × 15 cm",
     uniquenessTitle: "Handbemaltes Unikat",
     uniquenessDescription:
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
@@ -70,7 +73,7 @@ const bagProducts = [
     title: "Handbemalte Tasche 05",
     price: "50 €",
     image: "/images/bag-50.jpg",
-    size: "26 × 26 × 15 cm",
+    size: "26 × 20 × 15 cm",
     uniquenessTitle: "Handbemaltes Unikat",
     uniquenessDescription:
       "Diese Tasche wurde von Anastasiia Saienko von Hand bemalt.\nDas Motiv ist ein Original und existiert nur ein einziges Mal.",
@@ -98,16 +101,27 @@ export default async function ShopBagPage({
     notFound();
   }
 
+  const { data: reservationProduct, error } = await supabase
+    .from("artworks")
+    .select("*")
+    .eq("slug", product.slug)
+    .eq("product_type", "shop")
+    .single();
+
+  if (error || !reservationProduct) {
+    notFound();
+  }
+
   const art = {
-    id: product.slug.length,
-    slug: product.slug,
-    title: product.title,
-    image: product.image,
-    price: product.price,
-    status: product.status,
+    id: reservationProduct.id,
+    slug: reservationProduct.slug,
+    title: reservationProduct.title,
+    image: reservationProduct.image,
+    price: reservationProduct.price,
+    status: reservationProduct.status,
     exhibition: "Shop",
     description: product.description,
-    reserved_until: product.reserved_until,
+    reserved_until: reservationProduct.reserved_until,
     productType: product.productType,
   };
 
@@ -120,8 +134,8 @@ export default async function ShopBagPage({
           <div className="overflow-hidden bg-neutral-200 lg:max-w-[34rem] lg:self-start">
             <div className="relative aspect-[4/5]">
               <Image
-                src={product.image}
-                alt={product.title}
+                src={art.image}
+                alt={art.title}
                 fill
                 sizes="(max-width: 1023px) 100vw, (max-width: 1279px) 45vw, 34rem"
                 className="h-full w-full object-cover"
@@ -136,12 +150,12 @@ export default async function ShopBagPage({
               </p>
 
               <h1 className="text-[clamp(3rem,8vw,6rem)] leading-none tracking-tight lg:text-[5rem]">
-                {product.title}
+                {art.title}
               </h1>
             </div>
 
             <div className="space-y-3 text-[clamp(1rem,2vw,1.15rem)] text-neutral-600 lg:space-y-2 lg:text-base">
-              <p className="lg:text-lg lg:font-medium lg:text-black">{product.price}</p>
+              <p className="lg:text-lg lg:font-medium lg:text-black">{art.price}</p>
 
               <div className="space-y-4 pt-1 text-neutral-600">
                 <p className="text-sm text-neutral-500">Größe: {product.size}</p>
