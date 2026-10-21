@@ -5,6 +5,12 @@ import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+const artworksWithFrame = new Set([
+  "verschmelzung-von-formen",
+  "einfach-und-komplex",
+  "standards-unterschiede",
+]);
+
 export default async function ArtworkPage({
   params,
 }: {
@@ -58,6 +64,10 @@ export default async function ArtworkPage({
               <p className="lg:text-lg lg:font-medium lg:text-black">{art.price}</p>
 
               <p className="lg:text-sm">Status: {art.status}</p>
+
+              {artworksWithFrame.has(art.slug) && (
+                <p className="lg:text-sm">Bild inklusive schwarzem Rahmen.</p>
+              )}
 
             </div>
 
