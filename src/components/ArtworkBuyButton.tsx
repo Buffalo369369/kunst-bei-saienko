@@ -30,22 +30,24 @@ export default function ArtworkBuyButton({
   const isReserved =
     art.status === "Reserviert" &&
     (Number.isNaN(reservedUntil) || reservedUntil > currentTime);
+  const isSold = art.status === "Verkauft";
+  const isUnavailable = isReserved || isSold;
 
   return (
     <>
       <button
-        disabled={isReserved}
-        onClick={() => !isReserved && setShowModal(true)}
+        disabled={isUnavailable}
+        onClick={() => !isUnavailable && setShowModal(true)}
         className={`mt-10 px-8 py-4 text-sm uppercase tracking-[0.2em] text-white transition ${
-          isReserved
+          isUnavailable
             ? "cursor-not-allowed bg-neutral-400"
             : "bg-black hover:bg-neutral-800"
         }`}
       >
-        {isReserved ? "Reserviert" : "Reservieren"}
+        {isSold ? "Verkauft" : isReserved ? "Reserviert" : "Reservieren"}
       </button>
 
-      {showModal && (
+      {showModal && !isSold && (
         <ReservationModal
           art={art}
           onClose={() => setShowModal(false)}

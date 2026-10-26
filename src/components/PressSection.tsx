@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useId, useState } from "react";
+import { type ReactNode, useId, useState } from "react";
 
 export type PressArticle = {
   title: string;
-  image: string;
+  image?: string;
   publication?: string;
-  description?: string;
+  description?: ReactNode;
   href?: string;
 };
 
@@ -48,6 +48,30 @@ export const pressArticles: PressArticle[] = [
     image: "/images/statya44.jpg",
     description: "Ausführliches Porträt über meinen Neuanfang in Solingen, meine Kunstprojekte zu besonderen deutschen Wörtern und regionale Ausstellungen.",
     href: "https://solingenmagazin.de/hoffnung-in-farben-ukrainische-kuenstlerin-startet-neu-in-solingen",
+  },
+  {
+    title: "MIT-MENSCHLICHKEIT: DIE BINDUNG",
+    image: "/images/statya55.jpg",
+    description: (
+      <>
+        <p>
+          Für mich wird die Teilnahme an der Skulpturenausstellung im
+          SinnesWald zu einer wunderbaren Tradition – es ist bereits meine
+          zweite Saison in diesem faszinierenden Kunstraum unter freiem Himmel.
+        </p>
+        <p>
+          Mein diesjähriges Werk – „Mit-Menschlichkeit: Die Bindung“ – spricht
+          über Menschlichkeit durch den Dialog mit der Natur. Die voluminösen,
+          farbenfrohen Hände aus ökologischem Pappmaché, die den Baumstamm
+          umschlingen, und die verbindenden Drähte fungieren als eine Art
+          Nabelschnur, die uns mit unseren Ursprüngen verbindet. Es ist eine
+          Erinnerung an Verantwortung, ökologischen Respekt und Vergänglichkeit:
+          Das Kunstwerk ist so gestaltet, dass es sich im Laufe der Zeit ohne
+          Schaden für die Umwelt in ihr auflöst. Menschlichkeit ist das Wissen,
+          dass wir uns selbst schützen, wenn wir den Baum behutsam umarmen.
+        </p>
+      </>
+    ),
   },
 ];
 
@@ -154,21 +178,25 @@ export default function PressSection({
                   {articles.map((article, index) => (
                     <article
                       key={`${article.title}-${index}`}
-                      className="grid gap-5 border-b border-black/10 py-6 md:grid-cols-[35%_65%] md:gap-8"
+                      className={`grid gap-5 border-b border-black/10 py-6 md:gap-8 ${
+                        article.image ? "md:grid-cols-[35%_65%]" : "md:grid-cols-1"
+                      }`}
                     >
-                      <div className="flex justify-center md:justify-start">
-                        <div className="relative w-full max-w-[260px] bg-neutral-200 md:max-w-[280px]">
-                          <div className="relative aspect-[5/7]">
-                            <Image
-                              src={article.image}
-                              alt={article.title}
-                              fill
-                              sizes="(max-width: 767px) 100vw, 280px"
-                              className="object-contain"
-                            />
+                      {article.image ? (
+                        <div className="flex justify-center md:justify-start">
+                          <div className="relative w-full max-w-[260px] bg-neutral-200 md:max-w-[280px]">
+                            <div className="relative aspect-[5/7]">
+                              <Image
+                                src={article.image}
+                                alt={article.title}
+                                fill
+                                sizes="(max-width: 767px) 100vw, 280px"
+                                className="object-contain"
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
+                      ) : null}
 
                       <div className="flex flex-col justify-center">
                         <h3 className="text-xl uppercase tracking-[0.12em] text-black md:text-2xl">
@@ -182,9 +210,9 @@ export default function PressSection({
                         ) : null}
 
                         {article.description ? (
-                          <p className="mt-4 text-base leading-7 text-neutral-600">
+                          <div className="mt-4 space-y-5 text-base leading-7 text-neutral-600">
                             {article.description}
-                          </p>
+                          </div>
                         ) : null}
 
                         {article.href ? (

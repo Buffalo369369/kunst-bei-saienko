@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { supabase } from "@/lib/supabase";
+
+export const dynamic = "force-dynamic";
 
 const products = [
 	{
@@ -43,7 +46,16 @@ const book = {
 	href: "/kunst/anastasia-im-wunderland",
 };
 
-export default function ShopPage() {
+export default async function ShopPage() {
+	const { data: shopItems } = await supabase
+		.from("artworks")
+		.select("slug, status")
+		.eq("product_type", "shop");
+
+	const statusBySlug = new Map(
+		(shopItems ?? []).map((item) => [item.slug, item.status])
+	);
+
 	return (
 		<>
 			<Navbar />
@@ -92,35 +104,45 @@ export default function ShopPage() {
 							</article>
 						</Link>
 
-						{products.map((product) => (
-							<Link
-								key={product.slug}
-								href={`/shop/${product.slug}`}
-								className="group block h-full"
-							>
-								<article className="flex h-full flex-col">
-									<div className="relative aspect-square overflow-hidden bg-neutral-200">
-										<Image
-											src={product.image}
-											alt={product.title}
-											fill
-											sizes="(max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
-											className="object-cover transition duration-500 group-hover:scale-[1.03]"
-										/>
-									</div>
+						{products.map((product) => {
+							const status = statusBySlug.get(product.slug);
 
-									<div className="mt-3 space-y-2">
-										<h2 className="text-base leading-tight tracking-tight md:text-lg">
-											{product.title}
-										</h2>
+							return (
+								<Link
+									key={product.slug}
+									href={`/shop/${product.slug}`}
+									className="group block h-full"
+								>
+									<article className="flex h-full flex-col">
+										<div className="relative aspect-square overflow-hidden bg-neutral-200">
+											{status && (
+												<div className="absolute left-4 top-4 z-10 bg-white/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em]">
+													{status}
+												</div>
+											)}
 
-										<p className="text-sm text-neutral-700">
-											{product.price}
-										</p>
-									</div>
-								</article>
-							</Link>
-						))}
+											<Image
+												src={product.image}
+												alt={product.title}
+												fill
+												sizes="(max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
+												className="object-cover transition duration-500 group-hover:scale-[1.03]"
+											/>
+										</div>
+
+										<div className="mt-3 space-y-2">
+											<h2 className="text-base leading-tight tracking-tight md:text-lg">
+												{product.title}
+											</h2>
+
+											<p className="text-sm text-neutral-700">
+												{product.price}
+											</p>
+										</div>
+									</article>
+								</Link>
+							);
+						})}
 					</div>
 				</section>
 			</main>
