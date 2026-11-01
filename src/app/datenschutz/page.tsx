@@ -219,8 +219,42 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
+              <h2 className="mb-6 text-3xl tracking-tight">11. Newsletter</h2>
+
+              <p>
+                Wenn Sie sich für den Newsletter anmelden, verarbeiten wir
+                Vorname, Nachname, E-Mail-Adresse, den Zeitpunkt Ihrer
+                Einwilligung, die verwendete Einwilligungsversion und den
+                Anmeldeweg. Die Anmeldung erfolgt im Double-Opt-in-Verfahren:
+                Erst nach der aktiven Bestätigung über den per E-Mail versandten
+                Link wird die Anmeldung wirksam.
+              </p>
+
+              <p className="mt-6">
+                Die Daten werden zur Verwaltung der Anmeldung in Supabase
+                gespeichert. Für den Versand der Bestätigungs-E-Mail und die
+                spätere manuelle Newsletter-Kommunikation wird Brevo genutzt.
+                Nach der Bestätigung erhält Anastasiia Saienko über Telegram
+                eine Benachrichtigung mit Name und E-Mail-Adresse. Es werden
+                keine Newsletter automatisch über diese Website versendet.
+              </p>
+
+              <p className="mt-6">
+                Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a
+                DSGVO. Sie können Ihre Einwilligung jederzeit mit Wirkung für
+                die Zukunft widerrufen, indem Sie den Abmeldelink in einer
+                E-Mail nutzen oder sich an kunst.bei.saienko@gmail.com wenden.
+                Über den persönlichen Link können Sie zudem die Löschung Ihrer
+                Newsletter-Daten anfragen. Unbestätigte Anmeldungen werden nicht
+                für Newsletter verwendet. Die konkrete Ausgestaltung dieses
+                Newsletter-Abschnitts sollte vor Veröffentlichung rechtlich
+                geprüft werden.
+              </p>
+            </section>
+
+            <section>
               <h2 className="mb-6 text-3xl tracking-tight">
-                11. Schriftarten / next/font
+                12. Schriftarten / next/font
               </h2>
 
               <p>
@@ -234,7 +268,7 @@ export default function DatenschutzPage() {
 
             <section>
               <h2 className="mb-6 text-3xl tracking-tight">
-                12. Speicherdauer
+                13. Speicherdauer
               </h2>
 
               <p>
@@ -249,11 +283,17 @@ export default function DatenschutzPage() {
                 Einträge in Supabase gespeichert, bis eine Löschung aufgrund
                 dieser Zwecke oder Verpflichtungen erfolgt.
               </p>
+
+              <p className="mt-6">
+                Newsletter-Daten werden bis zum Widerruf der Einwilligung oder
+                bis zur Löschung der Daten gespeichert, soweit keine gesetzlichen
+                Aufbewahrungspflichten entgegenstehen.
+              </p>
             </section>
 
             <section>
               <h2 className="mb-6 text-3xl tracking-tight">
-                13. Rechtsgrundlagen
+                14. Rechtsgrundlagen
               </h2>
 
               <p>
@@ -271,19 +311,25 @@ export default function DatenschutzPage() {
                 sicheren, funktionsfähigen und bedarfsgerecht weiterentwickelten
                 Webauftritt.
               </p>
+
+              <p className="mt-6">
+                Die Newsletter-Anmeldung erfolgt auf Grundlage Ihrer
+                Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO.
+              </p>
             </section>
 
             <section>
               <h2 className="mb-6 text-3xl tracking-tight">
-                14. Empfänger und Drittlandübermittlung
+                15. Empfänger und Drittlandübermittlung
               </h2>
 
               <p>
                 Im Rahmen der beschriebenen Verarbeitung können externe
                 Dienstleister und Dienste Daten erhalten, insbesondere Vercel
                 für Hosting, Analytics und Speed Insights, Supabase für
-                Datenbankverarbeitung, Telegram für Benachrichtigungen sowie
-                YouTube bzw. Google für die Videoeinbindung.
+                Datenbankverarbeitung, Brevo für Newsletter-E-Mails, Telegram
+                für Benachrichtigungen sowie YouTube bzw. Google für die
+                Videoeinbindung.
               </p>
 
               <p className="mt-6">
@@ -294,7 +340,7 @@ export default function DatenschutzPage() {
 
             <section>
               <h2 className="mb-6 text-3xl tracking-tight">
-                15. SSL-/TLS-Verschlüsselung
+                16. SSL-/TLS-Verschlüsselung
               </h2>
 
               <p>
@@ -306,7 +352,7 @@ export default function DatenschutzPage() {
 
             <section>
               <h2 className="mb-6 text-3xl tracking-tight">
-                16. Rechte betroffener Personen
+                17. Rechte betroffener Personen
               </h2>
 
               <p>Sie haben im Rahmen der gesetzlichen Vorgaben das Recht auf:</p>
@@ -324,7 +370,7 @@ export default function DatenschutzPage() {
 
             <section>
               <h2 className="mb-6 text-3xl tracking-tight">
-                17. Beschwerderecht
+                18. Beschwerderecht
               </h2>
 
               <p>
@@ -337,7 +383,7 @@ export default function DatenschutzPage() {
 
             <section>
               <h2 className="mb-6 text-3xl tracking-tight">
-                18. Änderungen dieser Datenschutzerklärung
+                19. Änderungen dieser Datenschutzerklärung
               </h2>
 
               <p>
@@ -349,7 +395,7 @@ export default function DatenschutzPage() {
             </section>
 
             <section>
-              <h2 className="mb-6 text-3xl tracking-tight">19. Kontakt</h2>
+              <h2 className="mb-6 text-3xl tracking-tight">20. Kontakt</h2>
 
               <p>
                 Bei Fragen zum Datenschutz können Sie sich jederzeit an folgende

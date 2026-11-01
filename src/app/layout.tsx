@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import NewsletterSignupModal from "@/components/NewsletterSignupModal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
 
+        <NewsletterSignupModal />
         <Analytics />
         <SpeedInsights />
       </body>
